@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6791ADB1F6FDC6400EA2156 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6791ADA1F6FDC6400EA2156 /* main.m */; };
+		B6791ADE1F6FDC6400EA2156 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6791ADD1F6FDC6400EA2156 /* AppDelegate.m */; };
+		B6791AE11F6FDC6400EA2156 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6791AE01F6FDC6400EA2156 /* ViewController.m */; };
+		B6791AE41F6FDC6400EA2156 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6791AE21F6FDC6400EA2156 /* Main.storyboard */; };
+		B6791AE71F6FDC6400EA2156 /* ProviDesk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6791AE51F6FDC6400EA2156 /* ProviDesk.xcdatamodeld */; };
+		B6791AE91F6FDC6400EA2156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6791AE81F6FDC6400EA2156 /* Assets.xcassets */; };
+		B6791AEC1F6FDC6400EA2156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6791AEA1F6FDC6400EA2156 /* LaunchScreen.storyboard */; };
+		B6791AF71F6FDC6400EA2156 /* ProviDeskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6791AF61F6FDC6400EA2156 /* ProviDeskTests.m */; };
+		B6791B021F6FDC6500EA2156 /* ProviDeskUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6791B011F6FDC6500EA2156 /* ProviDeskUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6791AF31F6FDC6400EA2156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6791ACE1F6FDC6400EA2156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6791AD51F6FDC6400EA2156;
+			remoteInfo = ProviDesk;
+		};
+		B6791AFE1F6FDC6500EA2156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6791ACE1F6FDC6400EA2156 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6791AD51F6FDC6400EA2156;
+			remoteInfo = ProviDesk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6791AD61F6FDC6400EA2156 /* ProviDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProviDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6791ADA1F6FDC6400EA2156 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6791ADC1F6FDC6400EA2156 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B6791ADD1F6FDC6400EA2156 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B6791ADF1F6FDC6400EA2156 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B6791AE01F6FDC6400EA2156 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B6791AE31F6FDC6400EA2156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6791AE61F6FDC6400EA2156 /* ProviDesk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProviDesk.xcdatamodel; sourceTree = "<group>"; };
+		B6791AE81F6FDC6400EA2156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6791AEB1F6FDC6400EA2156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6791AED1F6FDC6400EA2156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6791AF21F6FDC6400EA2156 /* ProviDeskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProviDeskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6791AF61F6FDC6400EA2156 /* ProviDeskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProviDeskTests.m; sourceTree = "<group>"; };
+		B6791AF81F6FDC6400EA2156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6791AFD1F6FDC6500EA2156 /* ProviDeskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProviDeskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6791B011F6FDC6500EA2156 /* ProviDeskUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProviDeskUITests.m; sourceTree = "<group>"; };
+		B6791B031F6FDC6500EA2156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6791AD31F6FDC6400EA2156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6791AEF1F6FDC6400EA2156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6791AFA1F6FDC6500EA2156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6791ACD1F6FDC6400EA2156 = {
+			isa = PBXGroup;
+			children = (
+				B6791AD81F6FDC6400EA2156 /* ProviDesk */,
+				B6791AF51F6FDC6400EA2156 /* ProviDeskTests */,
+				B6791B001F6FDC6500EA2156 /* ProviDeskUITests */,
+				B6791AD71F6FDC6400EA2156 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6791AD71F6FDC6400EA2156 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6791AD61F6FDC6400EA2156 /* ProviDesk.app */,
+				B6791AF21F6FDC6400EA2156 /* ProviDeskTests.xctest */,
+				B6791AFD1F6FDC6500EA2156 /* ProviDeskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6791AD81F6FDC6400EA2156 /* ProviDesk */ = {
+			isa = PBXGroup;
+			children = (
+				B6791ADC1F6FDC6400EA2156 /* AppDelegate.h */,
+				B6791ADD1F6FDC6400EA2156 /* AppDelegate.m */,
+				B6791ADF1F6FDC6400EA2156 /* ViewController.h */,
+				B6791AE01F6FDC6400EA2156 /* ViewController.m */,
+				B6791AE21F6FDC6400EA2156 /* Main.storyboard */,
+				B6791AE81F6FDC6400EA2156 /* Assets.xcassets */,
+				B6791AEA1F6FDC6400EA2156 /* LaunchScreen.storyboard */,
+				B6791AED1F6FDC6400EA2156 /* Info.plist */,
+				B6791AE51F6FDC6400EA2156 /* ProviDesk.xcdatamodeld */,
+				B6791AD91F6FDC6400EA2156 /* Supporting Files */,
+			);
+			path = ProviDesk;
+			sourceTree = "<group>";
+		};
+		B6791AD91F6FDC6400EA2156 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6791ADA1F6FDC6400EA2156 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6791AF51F6FDC6400EA2156 /* ProviDeskTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6791AF61F6FDC6400EA2156 /* ProviDeskTests.m */,
+				B6791AF81F6FDC6400EA2156 /* Info.plist */,
+			);
+			path = ProviDeskTests;
+			sourceTree = "<group>";
+		};
+		B6791B001F6FDC6500EA2156 /* ProviDeskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6791B011F6FDC6500EA2156 /* ProviDeskUITests.m */,
+				B6791B031F6FDC6500EA2156 /* Info.plist */,
+			);
+			path = ProviDeskUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6791AD51F6FDC6400EA2156 /* ProviDesk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6791B061F6FDC6500EA2156 /* Build configuration list for PBXNativeTarget "ProviDesk" */;
+			buildPhases = (
+				B6791AD21F6FDC6400EA2156 /* Sources */,
+				B6791AD31F6FDC6400EA2156 /* Frameworks */,
+				B6791AD41F6FDC6400EA2156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProviDesk;
+			productName = ProviDesk;
+			productReference = B6791AD61F6FDC6400EA2156 /* ProviDesk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6791AF11F6FDC6400EA2156 /* ProviDeskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6791B091F6FDC6500EA2156 /* Build configuration list for PBXNativeTarget "ProviDeskTests" */;
+			buildPhases = (
+				B6791AEE1F6FDC6400EA2156 /* Sources */,
+				B6791AEF1F6FDC6400EA2156 /* Frameworks */,
+				B6791AF01F6FDC6400EA2156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6791AF41F6FDC6400EA2156 /* PBXTargetDependency */,
+			);
+			name = ProviDeskTests;
+			productName = ProviDeskTests;
+			productReference = B6791AF21F6FDC6400EA2156 /* ProviDeskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6791AFC1F6FDC6500EA2156 /* ProviDeskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6791B0C1F6FDC6500EA2156 /* Build configuration list for PBXNativeTarget "ProviDeskUITests" */;
+			buildPhases = (
+				B6791AF91F6FDC6500EA2156 /* Sources */,
+				B6791AFA1F6FDC6500EA2156 /* Frameworks */,
+				B6791AFB1F6FDC6500EA2156 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6791AFF1F6FDC6500EA2156 /* PBXTargetDependency */,
+			);
+			name = ProviDeskUITests;
+			productName = ProviDeskUITests;
+			productReference = B6791AFD1F6FDC6500EA2156 /* ProviDeskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6791ACE1F6FDC6400EA2156 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Omkar Awate";
+				TargetAttributes = {
+					B6791AD51F6FDC6400EA2156 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 294QVC6JLJ;
+						ProvisioningStyle = Automatic;
+					};
+					B6791AF11F6FDC6400EA2156 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 294QVC6JLJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6791AD51F6FDC6400EA2156;
+					};
+					B6791AFC1F6FDC6500EA2156 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 294QVC6JLJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6791AD51F6FDC6400EA2156;
+					};
+				};
+			};
+			buildConfigurationList = B6791AD11F6FDC6400EA2156 /* Build configuration list for PBXProject "ProviDesk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6791ACD1F6FDC6400EA2156;
+			productRefGroup = B6791AD71F6FDC6400EA2156 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6791AD51F6FDC6400EA2156 /* ProviDesk */,
+				B6791AF11F6FDC6400EA2156 /* ProviDeskTests */,
+				B6791AFC1F6FDC6500EA2156 /* ProviDeskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6791AD41F6FDC6400EA2156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6791AEC1F6FDC6400EA2156 /* LaunchScreen.storyboard in Resources */,
+				B6791AE91F6FDC6400EA2156 /* Assets.xcassets in Resources */,
+				B6791AE41F6FDC6400EA2156 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6791AF01F6FDC6400EA2156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6791AFB1F6FDC6500EA2156 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6791AD21F6FDC6400EA2156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6791AE11F6FDC6400EA2156 /* ViewController.m in Sources */,
+				B6791AE71F6FDC6400EA2156 /* ProviDesk.xcdatamodeld in Sources */,
+				B6791ADE1F6FDC6400EA2156 /* AppDelegate.m in Sources */,
+				B6791ADB1F6FDC6400EA2156 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6791AEE1F6FDC6400EA2156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6791AF71F6FDC6400EA2156 /* ProviDeskTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6791AF91F6FDC6500EA2156 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6791B021F6FDC6500EA2156 /* ProviDeskUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6791AF41F6FDC6400EA2156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6791AD51F6FDC6400EA2156 /* ProviDesk */;
+			targetProxy = B6791AF31F6FDC6400EA2156 /* PBXContainerItemProxy */;
+		};
+		B6791AFF1F6FDC6500EA2156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6791AD51F6FDC6400EA2156 /* ProviDesk */;
+			targetProxy = B6791AFE1F6FDC6500EA2156 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6791AE21F6FDC6400EA2156 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6791AE31F6FDC6400EA2156 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6791AEA1F6FDC6400EA2156 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6791AEB1F6FDC6400EA2156 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6791B041F6FDC6500EA2156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B6791B051F6FDC6500EA2156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6791B071F6FDC6500EA2156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294QVC6JLJ;
+				INFOPLIST_FILE = ProviDesk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplysmart.ProviDesk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B6791B081F6FDC6500EA2156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294QVC6JLJ;
+				INFOPLIST_FILE = ProviDesk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplysmart.ProviDesk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B6791B0A1F6FDC6500EA2156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 294QVC6JLJ;
+				INFOPLIST_FILE = ProviDeskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplysmart.ProviDeskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProviDesk.app/ProviDesk";
+			};
+			name = Debug;
+		};
+		B6791B0B1F6FDC6500EA2156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 294QVC6JLJ;
+				INFOPLIST_FILE = ProviDeskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplysmart.ProviDeskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProviDesk.app/ProviDesk";
+			};
+			name = Release;
+		};
+		B6791B0D1F6FDC6500EA2156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 294QVC6JLJ;
+				INFOPLIST_FILE = ProviDeskUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplysmart.ProviDeskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ProviDesk;
+			};
+			name = Debug;
+		};
+		B6791B0E1F6FDC6500EA2156 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 294QVC6JLJ;
+				INFOPLIST_FILE = ProviDeskUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.simplysmart.ProviDeskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ProviDesk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6791AD11F6FDC6400EA2156 /* Build configuration list for PBXProject "ProviDesk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6791B041F6FDC6500EA2156 /* Debug */,
+				B6791B051F6FDC6500EA2156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6791B061F6FDC6500EA2156 /* Build configuration list for PBXNativeTarget "ProviDesk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6791B071F6FDC6500EA2156 /* Debug */,
+				B6791B081F6FDC6500EA2156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B6791B091F6FDC6500EA2156 /* Build configuration list for PBXNativeTarget "ProviDeskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6791B0A1F6FDC6500EA2156 /* Debug */,
+				B6791B0B1F6FDC6500EA2156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B6791B0C1F6FDC6500EA2156 /* Build configuration list for PBXNativeTarget "ProviDeskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6791B0D1F6FDC6500EA2156 /* Debug */,
+				B6791B0E1F6FDC6500EA2156 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B6791AE51F6FDC6400EA2156 /* ProviDesk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B6791AE61F6FDC6400EA2156 /* ProviDesk.xcdatamodel */,
+			);
+			currentVersion = B6791AE61F6FDC6400EA2156 /* ProviDesk.xcdatamodel */;
+			path = ProviDesk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B6791ACE1F6FDC6400EA2156 /* Project object */;
+}
