@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6791AD51F6FDC6400EA2156"
+               BlueprintIdentifier = "B6AE35D51F7111B70077C308"
                BuildableName = "ProviDesk.app"
                BlueprintName = "ProviDesk"
                ReferencedContainer = "container:ProviDesk.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6791AF11F6FDC6400EA2156"
+               BlueprintIdentifier = "B6AE35EC1F7111B80077C308"
                BuildableName = "ProviDeskTests.xctest"
                BlueprintName = "ProviDeskTests"
                ReferencedContainer = "container:ProviDesk.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6791AFC1F6FDC6500EA2156"
+               BlueprintIdentifier = "B6AE35F71F7111B80077C308"
                BuildableName = "ProviDeskUITests.xctest"
                BlueprintName = "ProviDeskUITests"
                ReferencedContainer = "container:ProviDesk.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6791AD51F6FDC6400EA2156"
+            BlueprintIdentifier = "B6AE35D51F7111B70077C308"
             BuildableName = "ProviDesk.app"
             BlueprintName = "ProviDesk"
             ReferencedContainer = "container:ProviDesk.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6791AD51F6FDC6400EA2156"
+            BlueprintIdentifier = "B6AE35D51F7111B70077C308"
             BuildableName = "ProviDesk.app"
             BlueprintName = "ProviDesk"
             ReferencedContainer = "container:ProviDesk.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6791AD51F6FDC6400EA2156"
+            BlueprintIdentifier = "B6AE35D51F7111B70077C308"
             BuildableName = "ProviDesk.app"
             BlueprintName = "ProviDesk"
             ReferencedContainer = "container:ProviDesk.xcodeproj">
