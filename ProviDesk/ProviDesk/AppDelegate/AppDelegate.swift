@@ -8,15 +8,33 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var helpResponceDic : JSON = JSON(0)
+    
+    var WS_Obj : WebServiceClass = WebServiceClass()
+    var isUpdateNeededFlag : Bool? = false
+    var isCheckUpdateAPICallNeeded : Bool? = true
+    //checking pivotal integration
+    var window1: UIWindow?
+    //    var videoPlayer: MPMoviePlayerController!
+    var navigationController:UINavigationController!
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    // Save Help Desk - values
+    // Save Notification - values
+    var notificationResponceDic : JSON = JSON(0)
+    var sensorResponceDic : JSON = JSON(0)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.loadScreens(self)
         return true
     }
 
@@ -89,5 +107,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func loadScreens(_ sender: AnyObject) {
+        
+        let name=UserDefaults.standard.string(forKey: "autoLogIn")
+        
+//        let firstLogin = UserDefaults.standard.string(forKey: "FirstLogIn")
+        
+        
+        if name=="Yes"{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainViewController = storyboard.instantiateViewController(withIdentifier: "HelpDesk") as! HelpDeskController_V2
+            let mainViewCon = UINavigationController(rootViewController: mainViewController)
+            let leftViewController = storyboard.instantiateViewController(withIdentifier: "leftMenu") as! LeftMenuController
+            let slideMenuController = SlideMenuController(mainViewController:mainViewCon,leftMenuViewController:leftViewController)
+            
+            self.window?.rootViewController = slideMenuController
+            
+        
+            print("YES-->\(name)")
+        }
+        else{
+            
+            let loginView = storyboard.instantiateViewController(withIdentifier: "logInVC") as? LoginViewController
+            let mainViewCon = UINavigationController(rootViewController: loginView!)
+            self.window?.rootViewController = mainViewCon
+            
+            print("NO-->\(name)")
+        }
+    }
+    
 }
 

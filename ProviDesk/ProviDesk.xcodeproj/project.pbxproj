@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FFF5F08BD495EDA2B1AD6C8 /* Pods_ProviDesk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230250995AE1282AD12DB716 /* Pods_ProviDesk.framework */; };
+		93EFC94F09F17F98DA32D133 /* Pods_ProviDeskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E38296C009087A4498517C /* Pods_ProviDeskUITests.framework */; };
+		A70E069BE3FCAFA15F660742 /* Pods_ProviDeskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6500D6A0A1026A811AE888F /* Pods_ProviDeskTests.framework */; };
+		B67E13F51F8B675B00A83BAB /* HelpDeskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13F41F8B675B00A83BAB /* HelpDeskTableViewCell.swift */; };
+		B67E13F81F8B685700A83BAB /* ModelComplaintsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13F71F8B685700A83BAB /* ModelComplaintsData.swift */; };
+		B67E13FA1F8B7AAB00A83BAB /* HelpDeskChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13F91F8B7AAB00A83BAB /* HelpDeskChatController.swift */; };
+		B67E13FC1F8B814300A83BAB /* HelpdeskChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13FB1F8B814300A83BAB /* HelpdeskChatTableViewCell.swift */; };
+		B67E13FE1F8B880000A83BAB /* ImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13FD1F8B880000A83BAB /* ImageViewViewController.swift */; };
+		B67E14011F8B8A6700A83BAB /* AWSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E14001F8B8A6700A83BAB /* AWSConstant.swift */; };
+		B682F95D1F752EF200B0447C /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682F95C1F752EF200B0447C /* OTPViewController.swift */; };
 		B6AE35DA1F7111B70077C308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE35D91F7111B70077C308 /* AppDelegate.swift */; };
-		B6AE35DC1F7111B70077C308 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE35DB1F7111B70077C308 /* ViewController.swift */; };
+		B6AE35DC1F7111B70077C308 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE35DB1F7111B70077C308 /* LoginViewController.swift */; };
 		B6AE35DF1F7111B70077C308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AE35DD1F7111B70077C308 /* Main.storyboard */; };
 		B6AE35E21F7111B70077C308 /* ProviDesk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6AE35E01F7111B70077C308 /* ProviDesk.xcdatamodeld */; };
 		B6AE35E41F7111B70077C308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6AE35E31F7111B70077C308 /* Assets.xcassets */; };
 		B6AE35E71F7111B70077C308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AE35E51F7111B70077C308 /* LaunchScreen.storyboard */; };
 		B6AE35F21F7111B80077C308 /* ProviDeskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE35F11F7111B80077C308 /* ProviDeskTests.swift */; };
 		B6AE35FD1F7111B80077C308 /* ProviDeskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE35FC1F7111B80077C308 /* ProviDeskUITests.swift */; };
+		B6AE360D1F7133760077C308 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B6AE360C1F7133760077C308 /* Podfile */; };
+		B6AE36101F713C370077C308 /* WebServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE360F1F713C370077C308 /* WebServiceClass.swift */; };
+		B6AE36131F713C8B0077C308 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE36121F713C8B0077C308 /* ActivityIndicator.swift */; };
+		B6AE36161F713CD60077C308 /* GeneralMethodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE36151F713CD60077C308 /* GeneralMethodClass.swift */; };
+		B6AE36191F72593E0077C308 /* LeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE36181F72593E0077C308 /* LeftMenuController.swift */; };
+		B6AE361D1F725EEB0077C308 /* HelpDeskController_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */; };
+		B6AE36201F725FB40077C308 /* CompanySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +52,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230250995AE1282AD12DB716 /* Pods_ProviDesk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProviDesk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58B9DFFF4F83402DC5734751 /* Pods-ProviDesk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviDesk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProviDesk/Pods-ProviDesk.debug.xcconfig"; sourceTree = "<group>"; };
+		855FBCD3CDC5422BB48A942F /* Pods-ProviDesk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviDesk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProviDesk/Pods-ProviDesk.release.xcconfig"; sourceTree = "<group>"; };
+		92D53B6B9958C49C8F85383A /* Pods-ProviDeskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviDeskTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProviDeskTests/Pods-ProviDeskTests.release.xcconfig"; sourceTree = "<group>"; };
+		93CD4068BB33704BCBBACF0E /* Pods-ProviDeskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviDeskUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProviDeskUITests/Pods-ProviDeskUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93E38296C009087A4498517C /* Pods_ProviDeskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProviDeskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67E13F41F8B675B00A83BAB /* HelpDeskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskTableViewCell.swift; sourceTree = "<group>"; };
+		B67E13F71F8B685700A83BAB /* ModelComplaintsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelComplaintsData.swift; sourceTree = "<group>"; };
+		B67E13F91F8B7AAB00A83BAB /* HelpDeskChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskChatController.swift; sourceTree = "<group>"; };
+		B67E13FB1F8B814300A83BAB /* HelpdeskChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpdeskChatTableViewCell.swift; sourceTree = "<group>"; };
+		B67E13FD1F8B880000A83BAB /* ImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewController.swift; sourceTree = "<group>"; };
+		B67E14001F8B8A6700A83BAB /* AWSConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSConstant.swift; sourceTree = "<group>"; };
+		B682F95C1F752EF200B0447C /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		B6AE35D61F7111B70077C308 /* ProviDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProviDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AE35D91F7111B70077C308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6AE35DB1F7111B70077C308 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6AE35DB1F7111B70077C308 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6AE35DE1F7111B70077C308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6AE35E11F7111B70077C308 /* ProviDesk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProviDesk.xcdatamodel; sourceTree = "<group>"; };
 		B6AE35E31F7111B70077C308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +79,16 @@
 		B6AE35F81F7111B80077C308 /* ProviDeskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProviDeskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AE35FC1F7111B80077C308 /* ProviDeskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviDeskUITests.swift; sourceTree = "<group>"; };
 		B6AE35FE1F7111B80077C308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6AE360C1F7133760077C308 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B6AE360F1F713C370077C308 /* WebServiceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceClass.swift; sourceTree = "<group>"; };
+		B6AE36121F713C8B0077C308 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		B6AE36151F713CD60077C308 /* GeneralMethodClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMethodClass.swift; sourceTree = "<group>"; };
+		B6AE36181F72593E0077C308 /* LeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuController.swift; sourceTree = "<group>"; };
+		B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController_V2.swift; sourceTree = "<group>"; };
+		B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanySelectionTableViewCell.swift; sourceTree = "<group>"; };
+		D14A6051703BD95E56671E29 /* Pods-ProviDeskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviDeskUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProviDeskUITests/Pods-ProviDeskUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6500D6A0A1026A811AE888F /* Pods_ProviDeskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProviDeskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEABC620CC458EDA90926255 /* Pods-ProviDeskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviDeskTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProviDeskTests/Pods-ProviDeskTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFF5F08BD495EDA2B1AD6C8 /* Pods_ProviDesk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70E069BE3FCAFA15F660742 /* Pods_ProviDeskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +112,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EFC94F09F17F98DA32D133 /* Pods_ProviDeskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FF96A2261FCF3B393F59FB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58B9DFFF4F83402DC5734751 /* Pods-ProviDesk.debug.xcconfig */,
+				855FBCD3CDC5422BB48A942F /* Pods-ProviDesk.release.xcconfig */,
+				EEABC620CC458EDA90926255 /* Pods-ProviDeskTests.debug.xcconfig */,
+				92D53B6B9958C49C8F85383A /* Pods-ProviDeskTests.release.xcconfig */,
+				D14A6051703BD95E56671E29 /* Pods-ProviDeskUITests.debug.xcconfig */,
+				93CD4068BB33704BCBBACF0E /* Pods-ProviDeskUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B67E13F61F8B682E00A83BAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B67E13F71F8B685700A83BAB /* ModelComplaintsData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B67E13FF1F8B8A4E00A83BAB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B67E14001F8B8A6700A83BAB /* AWSConstant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B682F95E1F752F0300B0447C /* AuthenticationLogin */ = {
+			isa = PBXGroup;
+			children = (
+				B682F95C1F752EF200B0447C /* OTPViewController.swift */,
+				B6AE35DB1F7111B70077C308 /* LoginViewController.swift */,
+			);
+			name = AuthenticationLogin;
+			sourceTree = "<group>";
+		};
+		B682F95F1F752F1D00B0447C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE35D91F7111B70077C308 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		B6AE35CD1F7111B70077C308 = {
 			isa = PBXGroup;
 			children = (
+				B6AE360C1F7133760077C308 /* Podfile */,
 				B6AE35D81F7111B70077C308 /* ProviDesk */,
 				B6AE35F01F7111B80077C308 /* ProviDeskTests */,
 				B6AE35FB1F7111B80077C308 /* ProviDeskUITests */,
 				B6AE35D71F7111B70077C308 /* Products */,
+				5FF96A2261FCF3B393F59FB5 /* Pods */,
+				F38622B0919C9B427EBDF3F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +191,14 @@
 		B6AE35D81F7111B70077C308 /* ProviDesk */ = {
 			isa = PBXGroup;
 			children = (
-				B6AE35D91F7111B70077C308 /* AppDelegate.swift */,
-				B6AE35DB1F7111B70077C308 /* ViewController.swift */,
+				B67E13FF1F8B8A4E00A83BAB /* Constants */,
+				B67E13F61F8B682E00A83BAB /* Model */,
+				B682F95F1F752F1D00B0447C /* AppDelegate */,
+				B6AE361A1F725EBE0077C308 /* ViewControllers */,
+				B6AE36171F72590F0077C308 /* LeftMenuController */,
+				B6AE36141F713CC10077C308 /* Common Methods */,
+				B6AE36111F713C6E0077C308 /* Derived UI Classes */,
+				B6AE360E1F713BD20077C308 /* WebServices */,
 				B6AE35DD1F7111B70077C308 /* Main.storyboard */,
 				B6AE35E31F7111B70077C308 /* Assets.xcassets */,
 				B6AE35E51F7111B70077C308 /* LaunchScreen.storyboard */,
@@ -128,6 +226,83 @@
 			path = ProviDeskUITests;
 			sourceTree = "<group>";
 		};
+		B6AE360E1F713BD20077C308 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE360F1F713C370077C308 /* WebServiceClass.swift */,
+			);
+			name = WebServices;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B6AE36111F713C6E0077C308 /* Derived UI Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE361E1F725F790077C308 /* UITableViewCells */,
+				B6AE36121F713C8B0077C308 /* ActivityIndicator.swift */,
+			);
+			name = "Derived UI Classes";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B6AE36141F713CC10077C308 /* Common Methods */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE36151F713CD60077C308 /* GeneralMethodClass.swift */,
+			);
+			name = "Common Methods";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B6AE36171F72590F0077C308 /* LeftMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE36181F72593E0077C308 /* LeftMenuController.swift */,
+			);
+			name = LeftMenuController;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B6AE361A1F725EBE0077C308 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B682F95E1F752F0300B0447C /* AuthenticationLogin */,
+				B6AE361B1F725ECB0077C308 /* HelpDeskViewController */,
+			);
+			name = ViewControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B6AE361B1F725ECB0077C308 /* HelpDeskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */,
+				B67E13F41F8B675B00A83BAB /* HelpDeskTableViewCell.swift */,
+				B67E13F91F8B7AAB00A83BAB /* HelpDeskChatController.swift */,
+				B67E13FB1F8B814300A83BAB /* HelpdeskChatTableViewCell.swift */,
+				B67E13FD1F8B880000A83BAB /* ImageViewViewController.swift */,
+			);
+			name = HelpDeskViewController;
+			sourceTree = "<group>";
+		};
+		B6AE361E1F725F790077C308 /* UITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */,
+			);
+			name = UITableViewCells;
+			sourceTree = "<group>";
+		};
+		F38622B0919C9B427EBDF3F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				230250995AE1282AD12DB716 /* Pods_ProviDesk.framework */,
+				E6500D6A0A1026A811AE888F /* Pods_ProviDeskTests.framework */,
+				93E38296C009087A4498517C /* Pods_ProviDeskUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +310,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6AE36011F7111B80077C308 /* Build configuration list for PBXNativeTarget "ProviDesk" */;
 			buildPhases = (
+				6B59FA736A2D3FA63EED4D2C /* [CP] Check Pods Manifest.lock */,
 				B6AE35D21F7111B70077C308 /* Sources */,
 				B6AE35D31F7111B70077C308 /* Frameworks */,
 				B6AE35D41F7111B70077C308 /* Resources */,
+				E3086708FD05DF95AFB35922 /* [CP] Embed Pods Frameworks */,
+				C9C3B04670DC2F73F84BF904 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +330,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6AE36041F7111B80077C308 /* Build configuration list for PBXNativeTarget "ProviDeskTests" */;
 			buildPhases = (
+				2F51BC9CA0DDC73770E273BE /* [CP] Check Pods Manifest.lock */,
 				B6AE35E91F7111B80077C308 /* Sources */,
 				B6AE35EA1F7111B80077C308 /* Frameworks */,
 				B6AE35EB1F7111B80077C308 /* Resources */,
+				6836F8FEB5074095D205CFAA /* [CP] Embed Pods Frameworks */,
+				6F7F08D1EB91DF4F53FC09EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +351,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6AE36071F7111B80077C308 /* Build configuration list for PBXNativeTarget "ProviDeskUITests" */;
 			buildPhases = (
+				11636512AD0969F7AF3CF9A0 /* [CP] Check Pods Manifest.lock */,
 				B6AE35F41F7111B80077C308 /* Sources */,
 				B6AE35F51F7111B80077C308 /* Frameworks */,
 				B6AE35F61F7111B80077C308 /* Resources */,
+				EDCE877E9C95195310F165F9 /* [CP] Embed Pods Frameworks */,
+				6AB333E0A334AB2C456A3E58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +424,7 @@
 			files = (
 				B6AE35E71F7111B70077C308 /* LaunchScreen.storyboard in Resources */,
 				B6AE35E41F7111B70077C308 /* Assets.xcassets in Resources */,
+				B6AE360D1F7133760077C308 /* Podfile in Resources */,
 				B6AE35DF1F7111B70077C308 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,13 +445,164 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11636512AD0969F7AF3CF9A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F51BC9CA0DDC73770E273BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6836F8FEB5074095D205CFAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProviDeskTests/Pods-ProviDeskTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AB333E0A334AB2C456A3E58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProviDeskUITests/Pods-ProviDeskUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B59FA736A2D3FA63EED4D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6F7F08D1EB91DF4F53FC09EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProviDeskTests/Pods-ProviDeskTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9C3B04670DC2F73F84BF904 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProviDesk/Pods-ProviDesk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3086708FD05DF95AFB35922 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProviDesk/Pods-ProviDesk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDCE877E9C95195310F165F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProviDeskUITests/Pods-ProviDeskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B6AE35D21F7111B70077C308 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6AE35DC1F7111B70077C308 /* ViewController.swift in Sources */,
+				B67E13FE1F8B880000A83BAB /* ImageViewViewController.swift in Sources */,
+				B67E14011F8B8A6700A83BAB /* AWSConstant.swift in Sources */,
+				B682F95D1F752EF200B0447C /* OTPViewController.swift in Sources */,
+				B6AE35DC1F7111B70077C308 /* LoginViewController.swift in Sources */,
+				B6AE36201F725FB40077C308 /* CompanySelectionTableViewCell.swift in Sources */,
+				B67E13FA1F8B7AAB00A83BAB /* HelpDeskChatController.swift in Sources */,
+				B6AE36131F713C8B0077C308 /* ActivityIndicator.swift in Sources */,
+				B67E13FC1F8B814300A83BAB /* HelpdeskChatTableViewCell.swift in Sources */,
+				B6AE361D1F725EEB0077C308 /* HelpDeskController_V2.swift in Sources */,
+				B67E13F81F8B685700A83BAB /* ModelComplaintsData.swift in Sources */,
+				B6AE36161F713CD60077C308 /* GeneralMethodClass.swift in Sources */,
+				B6AE36191F72593E0077C308 /* LeftMenuController.swift in Sources */,
+				B6AE36101F713C370077C308 /* WebServiceClass.swift in Sources */,
 				B6AE35E21F7111B70077C308 /* ProviDesk.xcdatamodeld in Sources */,
+				B67E13F51F8B675B00A83BAB /* HelpDeskTableViewCell.swift in Sources */,
 				B6AE35DA1F7111B70077C308 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,8 +753,9 @@
 		};
 		B6AE36021F7111B80077C308 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B9DFFF4F83402DC5734751 /* Pods-ProviDesk.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 294QVC6JLJ;
 				INFOPLIST_FILE = ProviDesk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -430,8 +767,9 @@
 		};
 		B6AE36031F7111B80077C308 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 855FBCD3CDC5422BB48A942F /* Pods-ProviDesk.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = 294QVC6JLJ;
 				INFOPLIST_FILE = ProviDesk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -443,6 +781,7 @@
 		};
 		B6AE36051F7111B80077C308 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEABC620CC458EDA90926255 /* Pods-ProviDeskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +797,7 @@
 		};
 		B6AE36061F7111B80077C308 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92D53B6B9958C49C8F85383A /* Pods-ProviDeskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,6 +813,7 @@
 		};
 		B6AE36081F7111B80077C308 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D14A6051703BD95E56671E29 /* Pods-ProviDeskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 294QVC6JLJ;
@@ -487,6 +828,7 @@
 		};
 		B6AE36091F7111B80077C308 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93CD4068BB33704BCBBACF0E /* Pods-ProviDeskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 294QVC6JLJ;
@@ -518,6 +860,7 @@
 				B6AE36031F7111B80077C308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6AE36041F7111B80077C308 /* Build configuration list for PBXNativeTarget "ProviDeskTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +869,7 @@
 				B6AE36061F7111B80077C308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6AE36071F7111B80077C308 /* Build configuration list for PBXNativeTarget "ProviDeskUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +878,7 @@
 				B6AE36091F7111B80077C308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
