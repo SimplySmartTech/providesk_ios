@@ -872,7 +872,7 @@ class HelpDeskController_V2: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     @IBAction func histroryTapped(_ sender: Any) {
-//        self.performSegue(withIdentifier: "view_history", sender: self)
+        self.performSegue(withIdentifier: "view_history", sender: self)
     }
     
     func getPriorityColor(priority: String) -> UIColor {

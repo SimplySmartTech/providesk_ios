@@ -41,7 +41,7 @@ class GeneralMethodClass: NSObject {
         if GeneralMethodClass.isCurrentLoginForIndustrial() {
             keyLoginType = "sites"
         }
-        let array = Dictionary!.value(forKeyPath: String(format: "data.user.%@",keyLoginType)) as! NSArray
+        let array = Dictionary!.value(forKeyPath: String(format: "data.resident.%@",keyLoginType)) as! NSArray
         
         for dict in array
         {
@@ -83,12 +83,12 @@ class GeneralMethodClass: NSObject {
         
         var Flat_uuid = ""
         let Dictionary = GeneralMethodClass.getUserData()
-        //print(Dictionary)
-        var keyLoginType = "sites"
+        print(Dictionary)
+        var keyLoginType = "units"
         if GeneralMethodClass.isCurrentLoginForIndustrial() {
             keyLoginType = "sites"
         }
-        let array = Dictionary!.value(forKeyPath: String(format: "data.user.%@",keyLoginType)) as! NSArray
+        let array = Dictionary!.value(forKeyPath: String(format: "data.resident.%@",keyLoginType)) as! NSArray
         
         for dict in array
         {
@@ -106,11 +106,11 @@ class GeneralMethodClass: NSObject {
         let myFlatsDisplayNameDict=(UserDefaults.standard.value(forKey: "FlatDisplayDict") as! NSMutableDictionary)
         // print(myFlatsDisplayNameDict)
         let flatno = UserDefaults.standard.value(forKey: "mySelectedFlatNo") as? NSString ?? ""
-        if(flatno.length > 0){
-            return (myFlatsDisplayNameDict.value(forKey: flatno as String) as? String)!
-        }else{
+//        if(flatno.length > 0){
+//            return (myFlatsDisplayNameDict.value(forKey: flatno as String) as? String)!
+//        }else{
             return ""
-        }
+//        }
     }
     
     class func Get_SubCategory_id (_ SubCategoryArr: Array<JSON>, SelectedSubCategory: String) ->String{
@@ -151,8 +151,8 @@ class GeneralMethodClass: NSObject {
         
         let Dictionary = GeneralMethodClass.getUserData()
         //print(Dictionary)
-        if Dictionary!.value(forKeyPath: "data.user.company.name") as? String != nil{
-        let companyName = Dictionary!.value(forKeyPath: "data.user.company.name") as! String
+        if Dictionary!.value(forKeyPath: "data.resident.company.name") as? String != nil{
+        let companyName = Dictionary!.value(forKeyPath: "data.resident.company.name") as! String
         
         return companyName
         }

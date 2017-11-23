@@ -95,12 +95,18 @@ class WebServiceClass: NSObject{
                 if((data) != nil)
                 {
                     let jsonResult :JSON?
-                    jsonResult = JSON(data:data!)
-                    if (jsonResult != nil) {
-                        print(String(describing: jsonResult?.dictionaryValue))
-                        DispatchQueue.main.async(execute: {
-                            callback(jsonResult!)
-                        })
+                    do{
+                        jsonResult = try JSON(data:data!)
+                        
+                        if (jsonResult != nil) {
+                            print(String(describing: jsonResult?.dictionaryValue))
+                            DispatchQueue.main.async(execute: {
+                                callback(jsonResult!)
+                            })
+                        }
+                    }
+                    catch{
+                        print("Json Exception :")
                     }
                 }
                 else
@@ -160,13 +166,19 @@ class WebServiceClass: NSObject{
                 {
                     let jsonResult :JSON?
                     print("data is :\(String(describing: data))")
-                    jsonResult = JSON(data:data!)
-                    if (jsonResult != nil) {
-                        print("Response:\(String(describing: jsonResult?.stringValue))")
-                        DispatchQueue.main.async(execute: {
-                            callback(jsonResult!)
-                        })
+                    do{
+                        jsonResult = try JSON(data:data!)
+                        if (jsonResult != nil) {
+                            print("Response:\(String(describing: jsonResult?.stringValue))")
+                            DispatchQueue.main.async(execute: {
+                                callback(jsonResult!)
+                            })
+                        }
                     }
+                    catch{
+                        print("Json Exception :")
+                    }
+                    
                 }
                 else
                 {
@@ -235,12 +247,18 @@ class WebServiceClass: NSObject{
                 if((data) != nil)
                 {
                     let jsonResult :JSON?
-                    jsonResult = JSON(data:data!)
-                    if (jsonResult != nil) {
-                        //  print(jsonResult)
-                        DispatchQueue.main.async(execute: {
-                            callback(jsonResult!)
-                        })
+                    do{
+                        jsonResult = try JSON(data:data!)
+                        
+                        if (jsonResult != nil) {
+                            //  print(jsonResult)
+                            DispatchQueue.main.async(execute: {
+                                callback(jsonResult!)
+                            })
+                        }
+                    }
+                    catch{
+                        print("Json Exception :")
                     }
                 }else
                 {

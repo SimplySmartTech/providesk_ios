@@ -1,0 +1,169 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AWSAutoScaling (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSCloudWatch (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSCognito (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSCognitoIdentityProvider (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSCore (2.6.5)
+  - AWSDynamoDB (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSEC2 (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSElasticLoadBalancing (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSIoT (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSKinesis (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSLambda (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSLex (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSMachineLearning (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSMobileAnalytics (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSPinpoint (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSPolly (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSRekognition (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSS3 (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSSES (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSSimpleDB (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSSNS (2.6.5):
+    - AWSCore (= 2.6.5)
+  - AWSSQS (2.6.5):
+    - AWSCore (= 2.6.5)
+  - BSGridCollectionViewLayout (1.2.0)
+  - BSImagePicker (2.7.1):
+    - BSGridCollectionViewLayout (~> 1.2.0)
+    - UIImageViewModeScaleAspect (= 1.5)
+  - Cloudinary (2.0.2):
+    - Alamofire (~> 4.1)
+  - Cosmos (7.0.0)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
+  - IQKeyboardManagerSwift (5.0.6)
+  - libwebp (0.6.0):
+    - libwebp/core (= 0.6.0)
+    - libwebp/dec (= 0.6.0)
+    - libwebp/demux (= 0.6.0)
+    - libwebp/dsp (= 0.6.0)
+    - libwebp/enc (= 0.6.0)
+    - libwebp/mux (= 0.6.0)
+    - libwebp/utils (= 0.6.0)
+    - libwebp/webp (= 0.6.0)
+  - libwebp/core (0.6.0):
+    - libwebp/webp
+  - libwebp/dec (0.6.0):
+    - libwebp/core
+  - libwebp/demux (0.6.0):
+    - libwebp/core
+  - libwebp/dsp (0.6.0):
+    - libwebp/core
+  - libwebp/enc (0.6.0):
+    - libwebp/core
+  - libwebp/mux (0.6.0):
+    - libwebp/core
+  - libwebp/utils (0.6.0):
+    - libwebp/core
+  - libwebp/webp (0.6.0)
+  - Localize-Swift (1.7.1)
+  - PKHUD (5.0.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SDWebImage/WebP (3.8.2):
+    - libwebp
+    - SDWebImage/Core
+  - SlideMenuControllerSwift (3.0.2)
+  - SwiftyJSON (4.0.0)
+  - UIImageViewModeScaleAspect (1.5)
+
+DEPENDENCIES:
+  - AWSAutoScaling
+  - AWSCloudWatch
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSEC2
+  - AWSElasticLoadBalancing
+  - AWSIoT
+  - AWSKinesis
+  - AWSLambda
+  - AWSLex
+  - AWSMachineLearning
+  - AWSMobileAnalytics
+  - AWSPinpoint
+  - AWSPolly
+  - AWSRekognition
+  - AWSS3
+  - AWSSES
+  - AWSSimpleDB
+  - AWSSNS
+  - AWSSQS
+  - BSImagePicker
+  - Cloudinary
+  - Cosmos (~> 7.0)
+  - Crashlytics
+  - Fabric
+  - IQKeyboardManagerSwift
+  - Localize-Swift (~> 1.1)
+  - PKHUD
+  - SDWebImage (~> 3.8)
+  - SDWebImage/WebP
+  - SlideMenuControllerSwift
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AWSAutoScaling: 6f0d87927328c518adbd3374ee7b73f03b6241ba
+  AWSCloudWatch: b9698d157220ca9fb121263f98c2143405eec4e3
+  AWSCognito: 763ef7a193e6eaeddff382db4daa7608ec61be69
+  AWSCognitoIdentityProvider: 7d55b4511ece28c22debeb8f2ab8bc82ed5f6705
+  AWSCore: b4895b4a5256d0040f8825ad31f3477d081f508f
+  AWSDynamoDB: 8723495e4f010b65e7012fdc59f813c3a0a30006
+  AWSEC2: 80423292bf108659a4ca5a3ef84083fea6279647
+  AWSElasticLoadBalancing: fc81f1d2699a213998513464b0d28029869a4a80
+  AWSIoT: 0531cc2f672403e65ecc722f9a327eae2b346292
+  AWSKinesis: 7560a93bccba3bdd5a226b82ee9524af1e7d5c20
+  AWSLambda: add862724ccb76dfe769df566e2989c7e8ce6cf4
+  AWSLex: 132cc40d0aabb64a0e52188873aa3fed396baebd
+  AWSMachineLearning: 58aa592ba97e8a7fe2d5de2738a3c37adcf666be
+  AWSMobileAnalytics: 6de01f106b78b30e0724395fd7a2575d78a4e7c7
+  AWSPinpoint: 1cad0e4fb24512931b64bfcb37df3fb9210ce175
+  AWSPolly: ede618a621f07e1ff3512f2396f2ca96b57d357e
+  AWSRekognition: c45ddbc804ccffe01334889d2cc4109aa25f62ff
+  AWSS3: a92df2b4625488b5aae142f4311379fcd6bae3a7
+  AWSSES: d13ccd5cc0412335b3f8c703134e14c8309ed31c
+  AWSSimpleDB: f6ba011ad8006c027640a7a80f7a10b922200c05
+  AWSSNS: 8f29af433238455d0dbaa455a18da948e0856ed5
+  AWSSQS: 631a59b6cc783271cbd7244224d5a0a924796111
+  BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
+  BSImagePicker: eb12948a6e71b9855c2c37723dfd989b9b4288bd
+  Cloudinary: 2d7c889fc4329ebc59c7967ec277df882b2602d5
+  Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
+  Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SlideMenuControllerSwift: 16001e1fd9963fd089fa6c91dbe18d4c148f0ce9
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
+
+PODFILE CHECKSUM: 196be209e50ab1e6328b2c4376a70144f7703ac4
+
+COCOAPODS: 1.2.1

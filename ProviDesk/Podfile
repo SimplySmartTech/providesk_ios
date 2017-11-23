@@ -1,16 +1,18 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '8.1'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
-target 'ProviDesk' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-    pod 'SkyFloatingLabelTextField'
+def shared_pods
     pod 'SlideMenuControllerSwift'
-    pod 'SwiftyJSON'
-    pod 'SDWebImage', '~>3.8'
-    pod 'Localize-Swift', '~> 1.1'
+    pod 'IQKeyboardManagerSwift'
     pod 'PKHUD'
+    pod 'Localize-Swift', '~> 1.1'
+    pod 'Cosmos', '~> 7.0'
+    pod 'Cloudinary'
+    pod 'BSImagePicker'
+    pod 'SwiftyJSON'
+    pod 'Fabric'
+    pod 'Crashlytics'
     pod 'AWSAutoScaling'
     pod 'AWSCloudWatch'
     pod 'AWSCognito'
@@ -32,18 +34,10 @@ target 'ProviDesk' do
     pod 'AWSSimpleDB'
     pod 'AWSSNS'
     pod 'AWSSQS'
+    pod 'SDWebImage', '~>3.8'
+    pod 'SDWebImage/WebP'
+end
 
-
-  # Pods for ProviDesk
-
-  target 'ProviDeskTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ProviDeskUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target ‘ProviDesk’ do
+    shared_pods
 end

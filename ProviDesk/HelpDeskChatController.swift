@@ -10,7 +10,7 @@
 import UIKit
 import PKHUD
 //import Cloudinary
-//import BSImagePicker
+import BSImagePicker
 import Photos
 import SwiftyJSON
 import AWSS3
@@ -596,7 +596,7 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
     
     func CallHelpDeskChatSelfCommentAPI(){
         
-        HUD.show(.progress)
+//        HUD.show(.progress)
         let selfComment = msgTextfield.text! as String
         let urlString = String(format: "cms/complaints/%@/activity",StringComplaintID)
         let imageURL = "http://s3.amazonaws.com/xrbia-township/mobile/JPEG_20170508_150802.jpg"
@@ -890,13 +890,27 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
         let TimeStamp = GEN_Obj.ConvertDateFormater(myDate!, Old_Format: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZ", New_Format: "dd MMM,yy hh:mm a")
         cell.datelbl?.text = TimeStamp
         
-        let imageUrl = self.ResponceArray[indexPath.row]["image_url"].string
+        var imageUrl = self.ResponceArray[indexPath.row]["image_url"].string
         if  imageUrl != nil{
             if imageUrl != ""{
                 
                 cell.isUserInteractionEnabled = true
                 
-                print("Image Url is : \(String(describing: self.ResponceArray[indexPath.row]["image_url"].string))")
+//                print("Image Url is : \(String(describing: imageUrl) ?? )")
+//                imageUrl = "https://s3.amazonaws.com/xrbia-township/mobile/JPEG_20171123_001200.jpg"
+            
+//                imageUrl?.insert("s" , at: advance(imageUrl.startIndex, 4))
+                if !(imageUrl?.contains("https:"))!{
+                    imageUrl = imageUrl?.insert_s(string: "s", ind: 4)
+                }
+                print("Image Url is : \(String(describing: imageUrl))")
+                cell.userImageView.sd_setImage(with: URL(string: imageUrl!), placeholderImage: UIImage(named: "placeholder"))
+//                DispatchQueue.main.async {
+//                    let url = URL(string: imageUrl!)
+//                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+//                    cell.userImageView.image = UIImage(data: data!)
+//                }
+                
                 //                            var imageUrl: String = self.ResponceArray[indexPath.row]["image_url"].string!
                 //                "https://s3.amazonaws.com/xrbia-township//mobile/1493811770788.jpg"
                 
@@ -921,7 +935,7 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
                 //                    }
                 //                }
                 
-                cell.userImageView.sd_setImage(with: URL(string: imageUrl!), placeholderImage: UIImage(named: "placeholder.png"))
+                
                 
             }
             else {
@@ -1437,4 +1451,8 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
     
     
 }
-
+extension String {
+    func insert_s(string:String,ind:Int) -> String {
+        return  String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
+    }
+}

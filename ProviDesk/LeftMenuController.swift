@@ -57,12 +57,12 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
     var SelectedView: NSString? = NSString()  //FlatNoList or MainOptionList
     var Dictionary: NSDictionary? = NSDictionary()
     
-    var sensorcontroller: UIViewController!
-    var electricitycontroller: UINavigationController!
-    var watercontroller: UINavigationController!
-    var eWalletcontroller: UIViewController!
+//    var sensorcontroller: UIViewController!
+//    var electricitycontroller: UINavigationController!
+//    var watercontroller: UINavigationController!
+//    var eWalletcontroller: UIViewController!
     var helpdeskController: UIViewController!
-    var plannercontroller: UIViewController!
+//    var plannercontroller: UIViewController!
     var notificationcontroller: UIViewController!
     
     let availableLanguages = Localize.availableLanguages()
@@ -101,14 +101,14 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         setupSidePanelView()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let SensorController = storyboard.instantiateViewController(withIdentifier: "HelpDesk") as! HelpDeskController_V2
-        self.sensorcontroller = UINavigationController(rootViewController: SensorController)
+//        let SensorController = storyboard.instantiateViewController(withIdentifier: "HelpDesk") as! HelpDeskController_V2
+//        self.sensorcontroller = UINavigationController(rootViewController: SensorController)
         
-        //        let HelpDeskControl = storyboard.instantiateViewController(withIdentifier: "HelpDesk") as! HelpDeskController
-        //        self.helpdeskController = UINavigationController(rootViewController: HelpDeskControl)
-        //
-        //        let NotificationControl = storyboard.instantiateViewController(withIdentifier: "Notification") as! NotificationController
-        //        self.notificationcontroller = UINavigationController(rootViewController: NotificationControl)
+                let HelpDeskControl = storyboard.instantiateViewController(withIdentifier: "HelpDesk") as! HelpDeskController_V2
+                self.helpdeskController = UINavigationController(rootViewController: HelpDeskControl)
+        
+                let NotificationControl = storyboard.instantiateViewController(withIdentifier: "Notification") as! NotificationController
+                self.notificationcontroller = UINavigationController(rootViewController: NotificationControl)
         //
         //        let ElectricityControl = storyboard.instantiateViewController(withIdentifier: "Electricity") as! ElectricityController
         //        self.electricitycontroller = UINavigationController(rootViewController: ElectricityControl)
@@ -273,7 +273,8 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if VisibleList=="FlatNoList"
+        SelectedView = OperationArray[(indexPath as NSIndexPath).row] as NSString?
+        if VisibleList==""
         {
             
             lblFlatNo?.text = myFlatsDisplayNameDict?.value(forKey: OperationArray[(indexPath as NSIndexPath).row] as String) as? String
@@ -288,16 +289,16 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             
             if SelectedView == "Home" || SelectedView == "HelpDesk"
             {
-                self.slideMenuController()?.changeMainViewController(self.sensorcontroller, close: true)
+                self.slideMenuController()?.changeMainViewController(self.helpdeskController, close: true)
             }
-            //                else if SelectedView == "Helpdesk"
-            //                {
-            //                    self.slideMenuController()?.changeMainViewController(self.helpdeskController, close: true)
-            //                }
-            //                else if SelectedView == "Notification"
-            //                {
-            //                    self.slideMenuController()?.changeMainViewController(self.notificationcontroller, close: true)
-            //                }
+//            else if SelectedView == "Helpdesk"
+//            {
+//                self.slideMenuController()?.changeMainViewController(self.helpdeskController, close: true)
+//            }
+            else if SelectedView == "Notification"
+            {
+                self.slideMenuController()?.changeMainViewController(self.notificationcontroller, close: true)
+            }
             //                else if SelectedView == "Electricity"
             //                {
             //                    self.electricitycontroller.popToRootViewController(animated: false)
@@ -325,18 +326,18 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             
             SelectedView = OperationArray[(indexPath as NSIndexPath).row] as NSString?
             
-            if OperationArray[(indexPath as NSIndexPath).row] == "Home" || OperationArray[(indexPath as NSIndexPath).row] == "Sensors"
+            if OperationArray[(indexPath as NSIndexPath).row] == "Home" || OperationArray[(indexPath as NSIndexPath).row] == "Helpdesk"
             {
-                self.slideMenuController()?.changeMainViewController(self.sensorcontroller, close: true)
+                self.slideMenuController()?.changeMainViewController(self.helpdeskController, close: true)
             }
-                //            else if OperationArray[(indexPath as NSIndexPath).row]=="Helpdesk"
-                //            {
-                //                self.slideMenuController()?.changeMainViewController(self.helpdeskController, close: true)
-                //            }
-                //            else if OperationArray[(indexPath as NSIndexPath).row]=="Notification"
-                //            {
-                //                self.slideMenuController()?.changeMainViewController(self.notificationcontroller, close: true)
-                //            }
+                            else if OperationArray[(indexPath as NSIndexPath).row]=="Helpdesk"
+                            {
+                                self.slideMenuController()?.changeMainViewController(self.helpdeskController, close: true)
+                            }
+                            else if OperationArray[(indexPath as NSIndexPath).row]=="Notification"
+                            {
+                                self.slideMenuController()?.changeMainViewController(self.notificationcontroller, close: true)
+                            }
                 //            else if OperationArray[(indexPath as NSIndexPath).row]=="Electricity"
                 //            {
                 //                self.electricitycontroller.popToRootViewController(animated: false)
@@ -370,7 +371,9 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
                 }))
                 present(refreshAlert, animated: true, completion: nil)
             }
+//            VisibleList = ""
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     func Logout()
     {
@@ -530,7 +533,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             
         }
         //        menuObjectNameArray.append("Choose Language")
-        menuObjectNameArray.append("Sensors")
+//        menuObjectNameArray.append("Sensors")
         //        menuObjectNameArray.append("Sign Out")
         
         return menuObjectNameArray

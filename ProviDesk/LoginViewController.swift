@@ -8,8 +8,8 @@
 
 import UIKit
 import SlideMenuControllerSwift
-//import PKHUD
-import Localize_Swift
+import PKHUD
+//import Localize_Swift
 import Dispatch
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -33,7 +33,40 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
+class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    //Picker datasource function
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if( self.arrayCompanies.count != 0){
+        return self.arrayCompanies.count
+        }
+        else
+        {
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        isDisplayingSelectCompany = true
+        if (self.arrayCompanies.count != 0){
+            return (arrayCompanies[row] as! NSDictionary)["name"] as? String
+        }
+        else{
+            return nil
+            
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.selectCompanyTextField.text = (arrayCompanies[row] as! NSDictionary)["name"] as? String
+        subdomain = ((arrayCompanies[row] as! NSDictionary)["subdomain"] as? String)!
+        selctedNumber = row
+    }
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //    @IBOutlet weak var loginBtn: UIButton!
 //    @IBOutlet weak var clickHereBtn: UIButton!
@@ -49,6 +82,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     @IBOutlet weak var viewCompanyList: UIView!
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var viewActivityLogin: UIView!
+    @IBOutlet weak var selectCompanyTextField: UITextField!
+    
+    let selectCompanyPicker = UIPickerView()
+    
+    var selctedNumber = 0
+
     
     var activityIndicator = UIActivityIndicatorView()
     var WS_Obj : WebServiceClass = WebServiceClass()
@@ -62,6 +101,50 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        //Setting up pickerview
+        self.selectCompanyPicker.delegate = self as UIPickerViewDelegate
+        
+        let toolBarSelectCompany = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+        
+        toolBarSelectCompany.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        
+        toolBarSelectCompany.barStyle = UIBarStyle.blackTranslucent
+        
+        toolBarSelectCompany.tintColor = UIColor.white
+        
+        toolBarSelectCompany.backgroundColor = UIColor.black
+        
+        
+        let doneButtonSelectCompany = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.donePressed))
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        
+        label.font = UIFont(name: "Helvetica", size: 12)
+        
+        label.backgroundColor = UIColor.clear
+        
+        label.textColor = UIColor.white
+        
+        label.text = "Pick your category"
+        
+        label.textAlignment = NSTextAlignment.center
+        
+        let textBtn = UIBarButtonItem(customView: label)
+        
+        toolBarSelectCompany.setItems([flexSpace,textBtn,flexSpace,doneButtonSelectCompany], animated: true)
+        
+        selectCompanyTextField.inputAccessoryView = toolBarSelectCompany
+        
+        
+        
+        self.selectCompanyTextField.inputView = selectCompanyPicker
+        
+        
+        
+        
         
 //        self.setText()
         
@@ -151,8 +234,32 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         print("LogIn Button Tapped")
     }
     
+    
+    func donePressed(_ sender: UIBarButtonItem) {
+        
+        //        if self.categoryTextField.text == nil{
+        //            self.selectedNumber = 0
+        //        }
+        self.selectCompanyTextField.text = (arrayCompanies[selctedNumber] as! NSDictionary)["name"] as? String
+        self.selectCompanyTextField.resignFirstResponder()
+        isDisplayingSelectCompany = false
+//        categoryTextField.resignFirstResponder()
+//        subCategoryTextField.resignFirstResponder()
+//        self.subCategoryTextField.text = ""
+//        unitTextField.resignFirstResponder()
+//        self.selectedCategory = self.categoryTextField.text
+//        self.subCategoryNameArray = NSMutableArray()
+//        self.subCategoryPicker.reloadAllComponents()
+//        reloadSubCategory(selectedCategoryText: selectedCategory)
+//        self.subCategoryPicker.reloadAllComponents()
+        
+        
+        
+    }
+    
     func CallLoginAPIWithSubDomain(_ subdomain : String )
     {
+        HUD.show(.progress)
         let UUIDValue = UIDevice.current.identifierForVendor!.uuidString
         let notificationToken = UserDefaults.standard.string(forKey: "Push_Notificaiton_Token") ?? ""
         print("notification token is: Omkar " + notificationToken)
@@ -160,8 +267,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         print("UUID: \(UUIDValue)")
         
         let apiName : String
+//        subdomain = "pro-demo"
         if subdomain.characters.count > 0 {
-            apiName = "api/sessions/sign_in?subdomain=" + subdomain
+            apiName = "api/sessions/sign_in?subdomain=pro-demo" //+ subdomain
         } else {
             if isDisplayingSelectCompany {
                 displaySelectCompanyAlert()
@@ -169,11 +277,16 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
             }
             apiName = "api/sessions/sign_in"
         }
+        
+        print("API Name = \(apiName)")
 //        self.viewActivityLogin.isHidden = false
         let Body = String(format: "{\"session\":{\"login\":\"%@\",\"password\":\"%@\",\"device_id\":\"%@\",\"notification_token\":\"%@\",\"os_type\":\"ios\"}}",txtUserName.text!,txtPassword.text!,UUIDValue, notificationToken)
         
+        print("Body is : \(Body)")
+        
         WS_Obj.WebAPI_For_Login(apiName, Body:Body, RequestType:"POST"){(response) in
             var receivedData: NSDictionary = NSDictionary()
+            PKHUD.sharedHUD.hide(animated: false)
             receivedData = response as NSDictionary
             print("Login Response \(receivedData)")
 //            self.viewActivityLogin.isHidden = true
@@ -378,6 +491,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     // MARK: - Company List functions
     
     func displaySelectCompany() {
+        
+        self.viewCompanyList.layer.zPosition = 1;
+//        self.btnLogIn.layer.zPosition = 2
+        
         isDisplayingSelectCompany = true
 //        viewLoginContent.transform = CGAffineTransform(translationX: 0, y: 50 )
         scrollView.frame = CGRect(x: 20, y: 161, width: self.scrollView.frame.width, height: 170)
@@ -394,7 +511,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     func hideSelectCompany() {
         isDisplayingSelectCompany = false
         subdomain = ""
-        btnSelectCompany.setTitle("Select Company", for: UIControlState.normal)
+//        btnSelectCompany.setTitle("Select Company", for: UIControlState.normal)
 //        viewLoginContent.transform = CGAffineTransform.identity
         scrollView.frame = CGRect(x: 20, y: 161, width: self.scrollView.frame.width, height: 120)
         viewCompanyList.isHidden = true
@@ -443,7 +560,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         toggleDisplayCompanyList()
-        btnSelectCompany.setTitle((arrayCompanies[(indexPath as NSIndexPath).row] as! NSDictionary)["name"] as? String, for: UIControlState())
+//        btnSelectCompany.setTitle((arrayCompanies[(indexPath as NSIndexPath).row] as! NSDictionary)["name"] as? String, for: UIControlState())
         subdomain = ((arrayCompanies[(indexPath as NSIndexPath).row] as! NSDictionary)["subdomain"] as? String)!
     }
     
