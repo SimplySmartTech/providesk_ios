@@ -36,17 +36,19 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataSource, SlideMenuControllerDelegate {
     @IBOutlet weak var menuTableView: UITableView!
-    @IBOutlet weak var companyLogoImage: UIImageView!
+//    @IBOutlet weak var companyLogoImage: UIImageView!
+    @IBOutlet weak var profilePicButton: UIButton!
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var loggedInUserLbl: UILabel!
     @IBOutlet var lblFlatNo: UILabel? = UILabel()
     @IBOutlet var btnSwitchList: UIButton? = UIButton()
     @IBOutlet weak var arrowImage: UIImageView!
+//    @IBOutlet weak var menuItemImage: UILabel!
     var WS_Obj : WebServiceClass = WebServiceClass()
     
     var menuArray: Array<String> = []
-    //    var faicon  = [String: UniChar]()
+    var faicon  = [String: UniChar]()
     //var myFlatsArray: NSMutableArray? = NSMutableArray()
     var myFlatsArray: Array<String> = []
     var myFlatsDisplayNameDict : NSMutableDictionary? = NSMutableDictionary()
@@ -64,6 +66,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
     var helpdeskController: UIViewController!
 //    var plannercontroller: UIViewController!
     var notificationcontroller: UIViewController!
+    var profilecontroller: UIViewController!
     
     let availableLanguages = Localize.availableLanguages()
     var actionSheet: UIAlertController!
@@ -79,6 +82,8 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         menuTableView.tableFooterView = UIView(frame: .zero)
         
         
+        self.profilePicButton.layer.cornerRadius = 0.5 * self.profilePicButton.bounds.size.width
+        self.profilePicButton.clipsToBounds = true
         self.loggedInUserLbl.text  = GeneralMethodClass.Get_Current_UserName() as String
         
         self.companyName.text = GeneralMethodClass.Get_Current_companyName() as String
@@ -88,7 +93,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         //            self.companyLogoImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "bot_icon_gold.png"))
         //        }
         let imageUrl = ""
-        self.companyLogoImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "bot_icon_gold.png"))
+//        self.companyLogoImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "bot_icon_gold.png"))
         setBackgroundImage()
         menuTableView.delegate = self
         menuTableView.dataSource = self
@@ -97,7 +102,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
         SelectedView = "Home"
         
-        //        setMenuItemUnicode()
+        setMenuItemUnicode()
         setupSidePanelView()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -109,6 +114,9 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
                 let NotificationControl = storyboard.instantiateViewController(withIdentifier: "Notification") as! NotificationController
                 self.notificationcontroller = UINavigationController(rootViewController: NotificationControl)
+        
+        let ProfileControl = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        self.profilecontroller = UINavigationController(rootViewController: ProfileControl)
         //
         //        let ElectricityControl = storyboard.instantiateViewController(withIdentifier: "Electricity") as! ElectricityController
         //        self.electricitycontroller = UINavigationController(rootViewController: ElectricityControl)
@@ -211,7 +219,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
-        let menuItemImage: UIImageView = cell.viewWithTag(1) as! UIImageView
+        let menuItemImage: UILabel = cell.viewWithTag(3) as! UILabel
         let menuItemName: UILabel = cell.viewWithTag(2) as! UILabel
         
         if cell.viewWithTag(500) != nil {
@@ -222,19 +230,19 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         {
             if((indexPath as NSIndexPath).row == OperationArray.count-1)
             {
-                //                menuItemImage.font = UIFont(name:"botsworth", size: 30)
+                menuItemImage.font = UIFont(name:"botsworth", size: 30)
                 let Str="Sign Out"
-                //                menuItemImage.text = String(format: "%C",faicon[Str]!)
-                //menuItemName.text = OperationArray[indexPath.row]
+                menuItemImage.text = String(format: "%C",faicon[Str]!)
+                menuItemName.text = OperationArray[indexPath.row]
                 menuItemName.text = OperationArray[(indexPath as NSIndexPath).row].localized();
                 
             }
             else
             {
-                //                menuItemImage.font = UIFont(name:"botsworth", size: 30)
+                menuItemImage.font = UIFont(name:"botsworth", size: 30)
                 let Str="Home"
-                //                menuItemImage.text = String(format: "%C",faicon[Str]!)
-                //menuItemName.text = OperationArray[indexPath.row]
+                menuItemImage.text = String(format: "%C",faicon[Str]!)
+                menuItemName.text = OperationArray[indexPath.row]
                 let xx = OperationArray[(indexPath as NSIndexPath).row]
                 print(xx)
                 let xyz = myFlatsDisplayNameDict?.value(forKey: xx) as! String
@@ -246,10 +254,10 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             for view in menuItemImage.subviews{
                 view.removeFromSuperview()
             }
-            //            menuItemImage.font = UIFont(name:"botsworth", size: 30)
+            menuItemImage.font = UIFont(name:"botsworth", size: 30)
             let Str=String(format:"%@",OperationArray[(indexPath as NSIndexPath).row])
             if(Str == "Choose Language"){
-                //                menuItemImage.text = String(format: "%C",faicon["Planner"]!)
+                menuItemImage.text = String(format: "%C",faicon["Planner"]!)
                 let imageName = "ChooseLanguage"
                 let image = UIImage(named: imageName)
                 let imageView = UIImageView(image: image!)
@@ -259,11 +267,11 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
                 menuItemImage.addSubview(imageView)
                 //                menuItemImage.text = ""
             }
-            //            else{
-            //                menuItemImage.text = String(format: "%C",faicon[Str]!)
-            //            }
+            else{
+                menuItemImage.text = String(format: "%C",faicon[Str]!)
+            }
             menuItemName.text = OperationArray[(indexPath as NSIndexPath).row].localized();
-            menuItemImage.image = UIImage(named: "sensor")
+//            menuItemImage.image = UIImage(named: "sensor")
             //menuItemName.text = OperationArray[indexPath.row]
         }
         print("Print option : \(menuItemName.text)")
@@ -421,21 +429,21 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         self.sideMenuView.backgroundColor = UIColor(patternImage:image)
     }
     
-    //    func setMenuItemUnicode()
-    //    {
-    //        faicon["Home"] = 0xe606
-    //        faicon["Helpdesk"] = 0xe600
-    //        faicon["Notification"] = 0xe607
-    //        faicon["Electricity"] = 0xE602
-    //        faicon["Water"] = 0xE60B
-    //        faicon["eWallet"] = 0xE60A
-    //        faicon["Planner"] = 0xE62A
-    //        faicon["Sign Out"] = 0xF011
-    //        faicon["angle Up"] = 0xF106
-    //        faicon["angle Down"] = 0xf107
-    //        faicon["ProfilePic"] = 0xE61E
-    //        faicon["Sensors"] = 0xe606
-    //    }
+        func setMenuItemUnicode()
+        {
+            faicon["Home"] = 0xe606
+            faicon["Helpdesk"] = 0xe600
+            faicon["Notification"] = 0xe607
+            faicon["Electricity"] = 0xE602
+            faicon["Water"] = 0xE60B
+            faicon["eWallet"] = 0xE60A
+            faicon["Planner"] = 0xE62A
+            faicon["Sign Out"] = 0xF011
+            faicon["angle Up"] = 0xF106
+            faicon["angle Down"] = 0xf107
+            faicon["ProfilePic"] = 0xE61E
+            faicon["Sensors"] = 0xe606
+        }
     
     func setupSidePanelView() {
         let homeIcon = sideMenuView.viewWithTag(2) as! UILabel
@@ -554,5 +562,9 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         refreshAlert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action: UIAlertAction!) in
         }))
         present(refreshAlert, animated: true, completion: nil)
+    }
+    @IBAction func profileAction() {
+        closeLeft()
+        self.slideMenuController()?.changeMainViewController(self.profilecontroller, close: true)
     }
 }

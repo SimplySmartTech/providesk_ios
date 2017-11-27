@@ -12,6 +12,7 @@
 		B66A83241FC5FF1000D09237 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A83231FC5FF1000D09237 /* FeedbackController.swift */; };
 		B66A83261FC69B6F00D09237 /* HelpDeskHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A83251FC69B6F00D09237 /* HelpDeskHistoryViewController.swift */; };
 		B66A83281FC6D6F200D09237 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A83271FC6D6F200D09237 /* Banner.swift */; };
+		B66A83301FC73DA000D09237 /* botsworth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B66A832F1FC73D3500D09237 /* botsworth.ttf */; };
 		B67E13F51F8B675B00A83BAB /* HelpDeskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13F41F8B675B00A83BAB /* HelpDeskTableViewCell.swift */; };
 		B67E13F81F8B685700A83BAB /* ModelComplaintsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13F71F8B685700A83BAB /* ModelComplaintsData.swift */; };
 		B67E13FA1F8B7AAB00A83BAB /* HelpDeskChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67E13F91F8B7AAB00A83BAB /* HelpDeskChatController.swift */; };
@@ -35,6 +36,8 @@
 		B6AE361D1F725EEB0077C308 /* HelpDeskController_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */; };
 		B6AE36201F725FB40077C308 /* CompanySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */; };
 		B6DC2D8B1FB2E8A200B3D3D9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC2D8A1FB2E8A200B3D3D9 /* NotificationController.swift */; };
+		B6E28A911FCC2AB5005C7ACC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E28A901FCC2AB5005C7ACC /* ProfileViewController.swift */; };
+		B6E28A931FCC33B3005C7ACC /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E28A921FCC33B3005C7ACC /* ProfileTableViewCell.swift */; };
 		B6F6B7F31FB46EDC007EAB92 /* ModelNotificationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6B7F21FB46EDC007EAB92 /* ModelNotificationsData.swift */; };
 		B6F6B7F51FB46FB5007EAB92 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6B7F41FB46FB5007EAB92 /* NotificationTableViewCell.swift */; };
 		B6F6B7F71FB47051007EAB92 /* NotificationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6B7F61FB47051007EAB92 /* NotificationDetailController.swift */; };
@@ -102,6 +105,7 @@
 		B66A83231FC5FF1000D09237 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		B66A83251FC69B6F00D09237 /* HelpDeskHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskHistoryViewController.swift; sourceTree = "<group>"; };
 		B66A83271FC6D6F200D09237 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		B66A832F1FC73D3500D09237 /* botsworth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = botsworth.ttf; sourceTree = "<group>"; };
 		B67E13F41F8B675B00A83BAB /* HelpDeskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskTableViewCell.swift; sourceTree = "<group>"; };
 		B67E13F71F8B685700A83BAB /* ModelComplaintsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelComplaintsData.swift; sourceTree = "<group>"; };
 		B67E13F91F8B7AAB00A83BAB /* HelpDeskChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskChatController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 		B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController_V2.swift; sourceTree = "<group>"; };
 		B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		B6DC2D8A1FB2E8A200B3D3D9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B6E28A901FCC2AB5005C7ACC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B6E28A921FCC33B3005C7ACC /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6B7F21FB46EDC007EAB92 /* ModelNotificationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNotificationsData.swift; sourceTree = "<group>"; };
 		B6F6B7F41FB46FB5007EAB92 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6B7F61FB47051007EAB92 /* NotificationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailController.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 		B6AE35CD1F7111B70077C308 = {
 			isa = PBXGroup;
 			children = (
+				B66A832F1FC73D3500D09237 /* botsworth.ttf */,
 				B6AE360C1F7133760077C308 /* Podfile */,
 				B6AE35D81F7111B70077C308 /* ProviDesk */,
 				B6AE35F01F7111B80077C308 /* ProviDeskTests */,
@@ -309,6 +316,7 @@
 		B6AE361A1F725EBE0077C308 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6E28A8F1FCC2A9E005C7ACC /* Profile */,
 				B6DC2D891FB2E6CD00B3D3D9 /* NotificationViewController */,
 				B682F95E1F752F0300B0447C /* AuthenticationLogin */,
 				B6AE361B1F725ECB0077C308 /* HelpDeskViewController */,
@@ -349,6 +357,15 @@
 				B6F6B7F61FB47051007EAB92 /* NotificationDetailController.swift */,
 			);
 			name = NotificationViewController;
+			sourceTree = "<group>";
+		};
+		B6E28A8F1FCC2A9E005C7ACC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B6E28A901FCC2AB5005C7ACC /* ProfileViewController.swift */,
+				B6E28A921FCC33B3005C7ACC /* ProfileTableViewCell.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		F38622B0919C9B427EBDF3F0 /* Frameworks */ = {
@@ -513,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66A83301FC73DA000D09237 /* botsworth.ttf in Resources */,
 				B6AE35E71F7111B70077C308 /* LaunchScreen.storyboard in Resources */,
 				B6AE35E41F7111B70077C308 /* Assets.xcassets in Resources */,
 				B6AE360D1F7133760077C308 /* Podfile in Resources */,
@@ -598,6 +616,7 @@
 				B6AE35DC1F7111B70077C308 /* LoginViewController.swift in Sources */,
 				B6F6B7F31FB46EDC007EAB92 /* ModelNotificationsData.swift in Sources */,
 				B6AE36201F725FB40077C308 /* CompanySelectionTableViewCell.swift in Sources */,
+				B6E28A931FCC33B3005C7ACC /* ProfileTableViewCell.swift in Sources */,
 				B6F6B7F51FB46FB5007EAB92 /* NotificationTableViewCell.swift in Sources */,
 				B67E13FA1F8B7AAB00A83BAB /* HelpDeskChatController.swift in Sources */,
 				B6AE36131F713C8B0077C308 /* ActivityIndicator.swift in Sources */,
@@ -611,6 +630,7 @@
 				B6AE36101F713C370077C308 /* WebServiceClass.swift in Sources */,
 				B6AE35E21F7111B70077C308 /* ProviDesk.xcdatamodeld in Sources */,
 				B67E13F51F8B675B00A83BAB /* HelpDeskTableViewCell.swift in Sources */,
+				B6E28A911FCC2AB5005C7ACC /* ProfileViewController.swift in Sources */,
 				B6AE35DA1F7111B70077C308 /* AppDelegate.swift in Sources */,
 				B6F6B7F71FB47051007EAB92 /* NotificationDetailController.swift in Sources */,
 			);
