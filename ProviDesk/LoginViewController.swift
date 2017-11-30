@@ -360,6 +360,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
                     let auth_tokenString = receivedData.value(forKeyPath: "data.resident.auth_token") as! String
                     UserDefaults.standard.set(auth_tokenString, forKey: "Authorization_token")
                     
+                    let email_user = receivedData.value(forKeyPath: "data.resident.email") as! String
+                    UserDefaults.standard.set(email_user, forKey: "User_Email")
+                    
                     let api_keyArray = receivedData.value(forKeyPath: "data.resident.api_key") as! String
                     UserDefaults.standard.set(api_keyArray, forKey: "X-Api-Key")
                     

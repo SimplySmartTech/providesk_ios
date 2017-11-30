@@ -134,7 +134,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         if(Dictionary != nil)
         {
             //            if GeneralMethodClass.isCurrentLoginForIndustrial() {
-            myFlatsArray = Dictionary!.value(forKeyPath: "data.resident.sites.name") as! NSArray as! [String]
+            myFlatsArray = Dictionary!.value(forKeyPath: "data.resident.units.info") as! NSArray as! [String]
             //            }
             //            }
             //            else {
@@ -231,11 +231,11 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             if((indexPath as NSIndexPath).row == OperationArray.count-1)
             {
                 menuItemImage.font = UIFont(name:"botsworth", size: 30)
-                let Str="Sign Out"
+                let Str="Home"
                 menuItemImage.text = String(format: "%C",faicon[Str]!)
                 menuItemName.text = OperationArray[indexPath.row]
                 menuItemName.text = OperationArray[(indexPath as NSIndexPath).row].localized();
-                
+
             }
             else
             {
@@ -504,7 +504,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func getMenuOrder(forPolicies policies:[Dictionary<AnyHashable,Any>]) -> [String] {
         var menuObjectNameArray: Array<String> = []
-        //        menuObjectNameArray.append("Home")
+            menuObjectNameArray.append("Home")
         
         for policy in policies {
             
@@ -540,7 +540,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             }
             
         }
-        //        menuObjectNameArray.append("Choose Language")
+        
 //        menuObjectNameArray.append("Sensors")
         //        menuObjectNameArray.append("Sign Out")
         

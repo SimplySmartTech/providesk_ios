@@ -61,9 +61,9 @@ class ProfileViewController: UIViewController,UITableViewDataSource,UITableViewD
         if(Dictionary != nil)
         {
             let name = Dictionary!.value(forKeyPath: "data.resident.name") as? String
-//            let email = Dictionary!.value(forKeyPath: "data.resident.email") as? String
+            let email = Dictionary!.value(forKeyPath: "data.resident.email") as? String
             let phone = Dictionary!.value(forKeyPath: "data.resident.mobile") as? String
-            userData = [name!,phone!,"nil"]
+            userData = [name!,phone!,email!]
         }
         
         
