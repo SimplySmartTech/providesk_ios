@@ -8,6 +8,8 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import PKHUD
+
 
 class OTPViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var textField1: UITextField!
@@ -16,10 +18,16 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var textField4: UITextField!
     @IBOutlet weak var textField5: UITextField!
     @IBOutlet weak var textField6: UITextField!
+    @IBOutlet weak var mobileNoLbl: UILabel!
+    
+    var subdomain = ""
+    var residentID = ""
+    var mobileNumber = ""
+
+
     
     var dashboardcontroller: UIViewController!
     
-    var residentID = ""
     var WS_Obj : WebServiceClass = WebServiceClass()
     
     override func viewDidLoad() {
@@ -32,6 +40,9 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
         textField4.addTarget(self, action: #selector(self.textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         textField5.addTarget(self, action: #selector(self.textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         textField6.addTarget(self, action: #selector(self.textfieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        
+        
+        self.mobileNoLbl.text = "We've sent an OTP to " + self.mobileNumber
 
         // Do any additional setup after loading the view.
         
@@ -79,7 +90,13 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func validateOTPTapped(_ sender: Any) {
-        if (self.textField1.text != nil && self.textField2.text != nil && self.textField3.text != nil && self.textField4.text != nil && self.textField5.text != nil && self.textField6.text != nil){
+        
+        if (!self.textField1.hasText || !self.textField2.hasText || !self.textField3.hasText || !self.textField4.hasText || !self.textField5.hasText || !self.textField6.hasText){
+            let errorString = "Fields can not be blank"
+            self.showAlert(msg: errorString)
+        }
+        else{
+            HUD.show(.progress)
             let otpString1 = self.textField1.text
             let otpString2 = self.textField2.text
             let otpString3 = self.textField3.text
@@ -108,6 +125,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
         WS_Obj.WebAPI_With_Body(apiName, Body:Body, RequestType:"POST"){(response) in
 //            var receivedData: NSDictionary = NSDictionary()
 //            receivedData = response as NSDictionary
+            PKHUD.sharedHUD.hide(animated: false)
             print("Login Response \(response)")
             let dictionary = response.dictionaryObject! as NSDictionary
 
@@ -123,10 +141,17 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
        
 //                self.performSegue(withIdentifier: "otpVerified", sender: self)
             }
+            else{
+                let errorString = "Invalid OTP. Please Enter valid OTP"
+                self.clearAllTextFields()
+               self.showAlert(msg: errorString)
+            }
 
 
 
         }
+        
+        
 //
 //        WS_Obj.WebAPI_WithOut_Body(apiName , RequestType: "POST"){(responce) in
 //            print("Response OTP : \(responce) " )
@@ -142,45 +167,53 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
         
     }
     
+    func clearAllTextFields(){
+        self.textField1.text = ""
+        self.textField2.text = ""
+        self.textField3.text = ""
+        self.textField4.text = ""
+        self.textField5.text = ""
+        self.textField6.text = ""
+        self.textField1.becomeFirstResponder()
+        
+    }
     
-    //    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-//        let  char = string.cString(using: String.Encoding.utf8)!
-//        let isBackSpace = strcmp(char, "\\b")
-//        
-//        if (isBackSpace == -92) {
-//            print("Backspace was pressed")
-//            switch textField {
-//            case textField1 : textField2.becomeFirstResponder()
-//            case textField2 : textField3.becomeFirstResponder()
-//            case textField3 : textField4.becomeFirstResponder()
-//            case textField4 : textField5.becomeFirstResponder()
-//            case textField5 : textField6.becomeFirstResponder()
-//            case textField6 : textField6.resignFirstResponder()
-//            default:
-//                break
-//            }
-//        }
-//        return true
-//    }
-//    - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//    {
-//    NSUInteger newLength = [textField.text length] - range.length + [string length];
-//    if (newLength >= MAXLENGTH) {
-//    textField.text = [[textField.text stringByReplacingCharactersInRange:range withString:string] substringToIndex:MAXLENGTH];
-//    return NO;
-//    }
-//    return YES;
-//    }
+    func showAlert(msg: String)  {
+        let alert = UIAlertController(title: "Alert".localized(), message: msg.localized(), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok".localized(), style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func resendOTP(_ sender: Any) {
+        HUD.show(.progress)
+        let apiName : String
+      
+        apiName = "/api/residents/\(self.residentID)/send_otp"
+  
+        
+        
+        WS_Obj.WebAPI_WithOut_Body(apiName , RequestType: "GET"){(responce) in
+            print("Response OTP : \(responce) " )
+            DispatchQueue.main.async(execute: {
+                PKHUD.sharedHUD.hide(animated: false)
+                print("Response OTP : \(responce) " )
+                
+//                self.performSegue(withIdentifier: "otpScreen", sender: self)
+            })
+        }
+    }
+   
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }

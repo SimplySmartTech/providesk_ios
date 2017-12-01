@@ -96,6 +96,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     var isDisplayingSelectCompany : Bool = false
     var subdomain = ""
     var residentID = ""
+    var mobileNumber = ""
+
     var activationStatus = 0
     
     
@@ -286,13 +288,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         
         WS_Obj.WebAPI_For_Login(apiName, Body:Body, RequestType:"POST"){(response) in
             var receivedData: NSDictionary = NSDictionary()
-            PKHUD.sharedHUD.hide(animated: false)
+//            PKHUD.sharedHUD.hide(animated: false)
             receivedData = response as NSDictionary
             print("Login Response \(receivedData)")
 //            self.viewActivityLogin.isHidden = true
             
             if (receivedData .object(forKey: "Error") != nil)
             {
+                PKHUD.sharedHUD.hide(animated: false)
                 DispatchQueue.main.async(execute: {
                     
 //                    PKHUD.sharedHUD.hide(animated: false) { success in
@@ -305,11 +308,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
             }
             else if (receivedData .object(forKey: "company_list") != nil)
             {
+                PKHUD.sharedHUD.hide(animated: false)
                 self.arrayCompanies = receivedData.object(forKey: "company_list") as! NSArray;
                 self.displaySelectCompany()
             }
             else if (((receivedData .object(forKey: "message")! as AnyObject).isEqual(to: "Signed in successfully.")))
             {
+                PKHUD.sharedHUD.hide(animated: false)
                 DispatchQueue.main.async(execute: {
                     
                     //                    print("Recieved data is" , receivedData)
@@ -348,6 +353,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
                     //  let DisplayFlatsArray = receivedData.valueForKeyPath("data.resident.units.info") as? NSArray
                     
                     self.residentID = receivedData.value(forKeyPath: String(format: "data.resident.id")) as! String
+                    self.mobileNumber = receivedData.value(forKeyPath: String(format: "data.resident.mobile")) as! String
                     print("resident ID is  : \(self.residentID)")
                     
                     UserDefaults.standard.set(self.residentID, forKey: "residentID")
@@ -381,12 +387,14 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
                     
                     UserDefaults.standard.synchronize()
                     
-                    
+                    HUD.show(.progress)
                     self.Push2DashBoard()
+                    
                 })
             }
             else
             {
+                PKHUD.sharedHUD.hide(animated: false)
                 DispatchQueue.main.async(execute: {
                     let alert = UIAlertController(title: "Alert".localized(), message: "Please enter correct username & password.".localized(), preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Ok".localized(), style: UIAlertActionStyle.default, handler: nil))
@@ -419,7 +427,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         WS_Obj.WebAPI_WithOut_Body(apiName , RequestType: "GET"){(responce) in
             print("Response OTP : \(responce) " )
             DispatchQueue.main.async(execute: {
-                
+                PKHUD.sharedHUD.hide(animated: false)
                 print("Response OTP : \(responce) " )
                 
                 self.performSegue(withIdentifier: "otpScreen", sender: self)
@@ -428,6 +436,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         }
         else{
  
+        PKHUD.sharedHUD.hide(animated: false)
         let langStr = Locale.current.languageCode
         if langStr == "hi" {
             UserDefaults.standard.set("Hindi", forKey: "mySelectedLanguage")
@@ -568,7 +577,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        resignFirstResponder()
+//        resignFirstResponder()
+        self.txtUserName.resignFirstResponder()
+        self.txtPassword.resignFirstResponder()
+        
+        
     }
     
     /*
@@ -580,5 +593,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
      // Pass the selected object to the new view controller.
      }
      */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "otpScreen" {
+            print("Segua OTPVC")
+            let viewController:OTPViewController = segue.destination as! OTPViewController
+            viewController.mobileNumber = self.mobileNumber
+            viewController.residentID = self.residentID
+            viewController.subdomain = self.subdomain
+        }
+        
+    }
     
 }
