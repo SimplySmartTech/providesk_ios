@@ -187,6 +187,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
     @IBAction func resendOTP(_ sender: Any) {
         HUD.show(.progress)
         let apiName : String
+        
       
         apiName = "/api/residents/\(self.residentID)/send_otp"
   
@@ -195,6 +196,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate  {
         WS_Obj.WebAPI_WithOut_Body(apiName , RequestType: "GET"){(responce) in
             print("Response OTP : \(responce) " )
             DispatchQueue.main.async(execute: {
+                self.clearAllTextFields()
                 PKHUD.sharedHUD.hide(animated: false)
                 print("Response OTP : \(responce) " )
                 

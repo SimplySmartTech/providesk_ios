@@ -76,7 +76,7 @@ class WebServiceClass: NSObject{
         }
         
         let session = URLSession(configuration: configuration)
-        let urlString = NSString(format: "%@%@",Base_Url,apiNameFormatted);
+        let urlString = NSString(format: "%@/%@",Base_Url,apiNameFormatted);
         print(urlString)
         var request : URLRequest = URLRequest(url: URL(string: NSString(format: "%@", urlString)as String)!)
         //        request.cachePolicy = NSURLRequest.CachePolicy.returnCacheDataDontLoad

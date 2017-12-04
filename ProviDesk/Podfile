@@ -8,7 +8,6 @@ def shared_pods
     pod 'PKHUD'
     pod 'Localize-Swift', '~> 1.1'
     pod 'Cosmos', '~> 7.0'
-    pod 'Cloudinary'
     pod 'BSImagePicker'
     pod 'SwiftyJSON'
     pod 'Fabric'
