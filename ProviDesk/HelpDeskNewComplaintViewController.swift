@@ -233,9 +233,9 @@ class HelpDeskNewComplaintViewController: UIViewController,UIScrollViewDelegate,
         
         
         let Dictionary = GeneralMethodClass.getUserData()
-        myFlatsArray = Dictionary!.value(forKeyPath: "data.resident.units.info") as! NSArray as! [String];
-        myFlatNameArray = Dictionary!.value(forKeyPath: "data.resident.units.name") as! NSArray as! [String];
-        myFlatsIdArray = Dictionary!.value(forKeyPath: "data.resident.units.id") as! NSArray as! [String];
+        myFlatsArray = Dictionary!.value(forKeyPath: String(format:"data.%@.units.info",GeneralMethodClass.GET_RESPONSE_KEY())) as! NSArray as! [String];
+        myFlatNameArray = Dictionary!.value(forKeyPath: String(format:"data.%@.units.name",GeneralMethodClass.GET_RESPONSE_KEY())) as! NSArray as! [String];
+        myFlatsIdArray = Dictionary!.value(forKeyPath: String(format:"data.%@.units.id",GeneralMethodClass.GET_RESPONSE_KEY())) as! NSArray as! [String];
         print("Units Counts : \(myFlatsArray.count)")
         
         self.AssetArray.add(UIImage(named: "AttachmentIcon")!)

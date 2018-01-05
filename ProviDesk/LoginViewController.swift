@@ -282,7 +282,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         
         print("API Name = \(apiName)")
 //        self.viewActivityLogin.isHidden = false
-        let Body = String(format: "{\"session\":{\"login\":\"%@\",\"password\":\"%@\",\"device_id\":\"%@\",\"notification_token\":\"%@\",\"os_type\":\"ios\"}}",txtUserName.text!,txtPassword.text!,UUIDValue, notificationToken)
+        let Body = String(format: "{\"session\":{\"login\":\"%@\",\"password\":\"%@\",\"device_id\":\"%@\",\"notification_token\":\"%@\",\"os_type\":\"ios\"},\"user_login\":true}",txtUserName.text!,txtPassword.text!,UUIDValue, notificationToken)
         
         print("Body is : \(Body)")
         
@@ -337,24 +337,38 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
                         keyLoginType = "sites"
                     }
 //                    self.appDelegate.isCheckUpdateAPICallNeeded = false
-                    if (((receivedData.value(forKeyPath: String(format: "data.resident.%@", keyLoginType)) as? NSArray)?.count) != nil) {
+                    var residentOrUser = ""
+                    if ((receivedData.value(forKeyPath: String(format : "data.residents.%@",keyLoginType))) != nil){
+                        residentOrUser = "resident"
+                        
+                    }
+                    else if ((receivedData.value(forKeyPath: String(format : "data.user.%@",keyLoginType))) != nil){
+                        residentOrUser = "user"
+                    }
+                    UserDefaults.standard.set(residentOrUser, forKey: "ResidentORUser")
+                    
+                    print("Resident and user is \(residentOrUser)")
+                    if (((receivedData.value(forKeyPath: String(format: "data.%@.%@",residentOrUser, keyLoginType)) as? NSArray)?.count) != nil) {
                         let dict = NSMutableDictionary()
-                        for i in 0 ..< (receivedData.value(forKeyPath: String(format: "data.resident.%@", keyLoginType)) as! NSArray).count
+                        for i in 0 ..< (receivedData.value(forKeyPath: String(format: "data.%@.%@",residentOrUser, keyLoginType)) as! NSArray).count
                         {
-                            let value = ((((receivedData.value(forKeyPath: String(format: "data.resident.%@", keyLoginType)) as? NSArray)?.object(at: i))! as AnyObject).value(forKey: "info")) as! String
-                            let key = ((((receivedData.value(forKeyPath: String(format: "data.resident.%@", keyLoginType)) as? NSArray)?.object(at: i))! as AnyObject).value(forKey: "name")) as! String
+                            let value = ((((receivedData.value(forKeyPath: String(format: "data.%@.%@", residentOrUser,keyLoginType)) as? NSArray)?.object(at: i))! as AnyObject).value(forKey: "info")) as! String
+                            let key = ((((receivedData.value(forKeyPath: String(format: "data.%@.%@", residentOrUser,keyLoginType)) as? NSArray)?.object(at: i))! as AnyObject).value(forKey: "name")) as! String
                             dict.setObject(value, forKey: key as NSCopying)
                         }
                         print(dict)
                         UserDefaults.standard.set(dict, forKey: "FlatDisplayDict")
                     }
                     
-                    let FlatsArray = receivedData.value(forKeyPath: String(format: "data.resident.%@.name", keyLoginType)) as? NSArray
+                    
+                    let FlatsArray = receivedData.value(forKeyPath: String(format: "data.%@.%@.name", residentOrUser,keyLoginType)) as? NSArray
                     //  let DisplayFlatsArray = receivedData.valueForKeyPath("data.resident.units.info") as? NSArray
                     
-                    self.residentID = receivedData.value(forKeyPath: String(format: "data.resident.id")) as! String
-                    self.mobileNumber = receivedData.value(forKeyPath: String(format: "data.resident.mobile")) as! String
+                    self.residentID = receivedData.value(forKeyPath: String(format: "data.%@.id",residentOrUser)) as! String
+                    if (receivedData.value(forKeyPath: String(format: "data.%@.mobile",residentOrUser)) as? String != nil) {
+                    self.mobileNumber = receivedData.value(forKeyPath: String(format: "data.%@.mobile",residentOrUser)) as! String
                     print("resident ID is  : \(self.residentID)")
+                    }
                     
                     UserDefaults.standard.set(self.residentID, forKey: "residentID")
                     
@@ -363,13 +377,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
                         UserDefaults.standard.set(Str, forKey: "mySelectedFlatNo")
                     }
                     
-                    let auth_tokenString = receivedData.value(forKeyPath: "data.resident.auth_token") as! String
+                    let auth_tokenString = receivedData.value(forKeyPath: String(format:"data.%@.auth_token",residentOrUser)) as! String
                     UserDefaults.standard.set(auth_tokenString, forKey: "Authorization_token")
                     
-                    let email_user = receivedData.value(forKeyPath: "data.resident.email") as! String
+                    let email_user = receivedData.value(forKeyPath: String(format:"data.%@.email",residentOrUser)) as! String
                     UserDefaults.standard.set(email_user, forKey: "User_Email")
                     
-                    let api_keyArray = receivedData.value(forKeyPath: "data.resident.api_key") as! String
+                    let api_keyArray = receivedData.value(forKeyPath: String(format:"data.%@.api_key",residentOrUser)) as! String
                     UserDefaults.standard.set(api_keyArray, forKey: "X-Api-Key")
                     
                     let subdomainLoggedIn = receivedData.value(forKeyPath: "subdomain") as! String
@@ -377,9 +391,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
                     let version = receivedData.value(forKeyPath: "version") as! NSInteger
                     UserDefaults.standard.set(String.init(format:"%d", version), forKey: "Version")
                     
-                    let siteID = ((((receivedData.value(forKeyPath: String(format: "data.resident.sites", keyLoginType)) as? NSArray)?.object(at: 0))! as AnyObject).value(forKey: "id")) as! String
+                    let siteID = ((((receivedData.value(forKeyPath: String(format: "data.%@.sites",residentOrUser, keyLoginType)) as? NSArray)?.object(at: 0))! as AnyObject).value(forKey: "id")) as! String
                     
-                    self.activationStatus = receivedData.value(forKeyPath: "data.resident.active") as! Int
+                    self.activationStatus = receivedData.value(forKeyPath:String(format: "data.%@.active",residentOrUser)) as! Int
                     
                     print("Site ID : \(siteID)")
                     
@@ -452,18 +466,28 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "leftMenu") as! LeftMenuController
         let slideMenuController = SlideMenuController(mainViewController:mainViewCon,leftMenuViewController:leftViewController)
         self.view.window?.rootViewController = slideMenuController
-//        let firstLogin = UserDefaults.standard.string(forKey: "FirstLogIn")
-//        if firstLogin == "NO"{
-//
-//        }
-//        else
-//        {
-//            var changePasswordController: UIViewController!
-//            let PasswordControl = storyboard.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordViewController
-//            changePasswordController = UINavigationController(rootViewController: PasswordControl)
-//            //push to Change Password
-//            slideMenuController.changeMainViewController(changePasswordController, close: true)
-//        }
+        let firstLogin = UserDefaults.standard.string(forKey: "FirstLogIn")
+        if firstLogin == nil {
+            UserDefaults.standard.set("YES", forKey: "FirstLogIn")
+            }
+            else{
+                UserDefaults.standard.set("NO", forKey: "FirstLogIn")
+            }
+            if UserDefaults.standard.string(forKey: "FirstLogIn") == "NO"{
+                var changePasswordController: UIViewController!
+                let PasswordControl = storyboard.instantiateViewController(withIdentifier: "HelpDesk") as! HelpDeskController_V2
+                changePasswordController = UINavigationController(rootViewController: PasswordControl)
+                //push to Change Password
+                slideMenuController.changeMainViewController(changePasswordController, close: true)
+            }
+        else
+        {
+            var changePasswordController: UIViewController!
+            let PasswordControl = storyboard.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordViewController
+            changePasswordController = UINavigationController(rootViewController: PasswordControl)
+            //push to Change Password
+            slideMenuController.changeMainViewController(changePasswordController, close: true)
+        }
         
         }
         
@@ -481,7 +505,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIScrollViewDele
         if(txtUserName == textField)
         {
             let newLength = text.utf16.count + string.utf16.count - range.length
-            return newLength <= 10 // Bool
+            return newLength <= 30 // Bool
         }
         else
         {

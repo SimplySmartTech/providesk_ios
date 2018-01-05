@@ -170,7 +170,7 @@ class NotificationController: UIViewController,UIGestureRecognizerDelegate {
         //        print(Dictionary)
         if(Dictionary != nil)
         {
-            Resident_id = Dictionary!.value(forKeyPath: "data.resident.id") as? String
+            Resident_id = Dictionary!.value(forKeyPath: String(format:"data.%@.id",GeneralMethodClass.GET_RESPONSE_KEY())) as? String
         }
         print("Resident_id :\(Resident_id)")
         let urlString = String(format: "api/residents/%@/notifications",Resident_id)
@@ -225,7 +225,7 @@ class NotificationController: UIViewController,UIGestureRecognizerDelegate {
         // print(Dictionary)
         if(Dictionary != nil)
         {
-            Resident_id = Dictionary!.value(forKeyPath: "data.resident.id") as? String
+            Resident_id = Dictionary!.value(forKeyPath: String(format:"data.%@.id",GeneralMethodClass.GET_RESPONSE_KEY())) as? String
         }
         let urlString = String(format: "api/residents/%@/notifications/%@",Resident_id,Notification_id)
         //notification[read_at]=2015-12-22T13%3A58%3A19%2B05%3A30

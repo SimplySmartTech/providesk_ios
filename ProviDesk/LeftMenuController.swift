@@ -134,7 +134,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
         if(Dictionary != nil)
         {
             //            if GeneralMethodClass.isCurrentLoginForIndustrial() {
-            myFlatsArray = Dictionary!.value(forKeyPath: "data.resident.units.info") as! NSArray as! [String]
+            myFlatsArray = Dictionary!.value(forKeyPath: String(format:"data.%@.units.info",GeneralMethodClass.GET_RESPONSE_KEY())) as! NSArray as! [String]
             //            }
             //            }
             //            else {
@@ -392,7 +392,7 @@ class LeftMenuController: UIViewController ,UITableViewDelegate,UITableViewDataS
             print(receivedData)
         }
         for key in Array(UserDefaults.standard.dictionaryRepresentation().keys){
-            if key != "Push_Notificaiton_Token" && key != "v1.4 b0.6 UpdationStatus" {
+            if key != "Push_Notificaiton_Token" && key != "v1.4 b0.6 UpdationStatus" && key != "FirstLogIn"{
                 UserDefaults.standard.removeObject(forKey: key)
             }
         }

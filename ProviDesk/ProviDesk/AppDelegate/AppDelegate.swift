@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UIGestureRecognizerDelegat
     func registerForPushNotifications(application: UIApplication) {
         
         let notificationSettings = UIUserNotificationSettings(
-            types: [.badge, .sound, .alert], categories: nil)
+            types: [.sound, .alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B603D4C51FBAF63C007A2C7A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B603D4C41FBAF63C007A2C7A /* UserNotifications.framework */; };
 		B603D4CA1FBD9C87007A2C7A /* HelpDeskNewComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B603D4C91FBD9C87007A2C7A /* HelpDeskNewComplaintViewController.swift */; };
+		B65FF97B1FFD0E9800026BD3 /* UpdateStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65FF97A1FFD0E9800026BD3 /* UpdateStatusViewController.swift */; };
 		B66A83241FC5FF1000D09237 /* FeedbackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A83231FC5FF1000D09237 /* FeedbackController.swift */; };
 		B66A83261FC69B6F00D09237 /* HelpDeskHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A83251FC69B6F00D09237 /* HelpDeskHistoryViewController.swift */; };
 		B66A83281FC6D6F200D09237 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A83271FC6D6F200D09237 /* Banner.swift */; };
@@ -36,6 +37,7 @@
 		B6AE361D1F725EEB0077C308 /* HelpDeskController_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */; };
 		B6AE36201F725FB40077C308 /* CompanySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */; };
 		B6DC2D8B1FB2E8A200B3D3D9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC2D8A1FB2E8A200B3D3D9 /* NotificationController.swift */; };
+		B6E017C21FE8ECAC003B8A3F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E017C11FE8ECAC003B8A3F /* ChangePasswordViewController.swift */; };
 		B6E28A911FCC2AB5005C7ACC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E28A901FCC2AB5005C7ACC /* ProfileViewController.swift */; };
 		B6E28A931FCC33B3005C7ACC /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E28A921FCC33B3005C7ACC /* ProfileTableViewCell.swift */; };
 		B6F6B7F31FB46EDC007EAB92 /* ModelNotificationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6B7F21FB46EDC007EAB92 /* ModelNotificationsData.swift */; };
@@ -102,6 +104,7 @@
 		B603D5121FBDA75E007A2C7A /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SlideMenuControllerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B603D5131FBDA75E007A2C7A /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B603D5141FBDA75E007A2C7A /* UIImageViewModeScaleAspect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIImageViewModeScaleAspect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65FF97A1FFD0E9800026BD3 /* UpdateStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStatusViewController.swift; sourceTree = "<group>"; };
 		B66A83231FC5FF1000D09237 /* FeedbackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackController.swift; sourceTree = "<group>"; };
 		B66A83251FC69B6F00D09237 /* HelpDeskHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDeskHistoryViewController.swift; sourceTree = "<group>"; };
 		B66A83271FC6D6F200D09237 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		B6AE361C1F725EEB0077C308 /* HelpDeskController_V2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDeskController_V2.swift; sourceTree = "<group>"; };
 		B6AE361F1F725FB40077C308 /* CompanySelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		B6DC2D8A1FB2E8A200B3D3D9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B6E017C11FE8ECAC003B8A3F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B6E28A901FCC2AB5005C7ACC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B6E28A921FCC33B3005C7ACC /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B6F6B7F21FB46EDC007EAB92 /* ModelNotificationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNotificationsData.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 			children = (
 				B682F95C1F752EF200B0447C /* OTPViewController.swift */,
 				B6AE35DB1F7111B70077C308 /* LoginViewController.swift */,
+				B6E017C11FE8ECAC003B8A3F /* ChangePasswordViewController.swift */,
 			);
 			name = AuthenticationLogin;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				B603D4C91FBD9C87007A2C7A /* HelpDeskNewComplaintViewController.swift */,
 				B66A83231FC5FF1000D09237 /* FeedbackController.swift */,
 				B66A83251FC69B6F00D09237 /* HelpDeskHistoryViewController.swift */,
+				B65FF97A1FFD0E9800026BD3 /* UpdateStatusViewController.swift */,
 			);
 			name = HelpDeskViewController;
 			sourceTree = "<group>";
@@ -619,11 +625,13 @@
 				B6E28A931FCC33B3005C7ACC /* ProfileTableViewCell.swift in Sources */,
 				B6F6B7F51FB46FB5007EAB92 /* NotificationTableViewCell.swift in Sources */,
 				B67E13FA1F8B7AAB00A83BAB /* HelpDeskChatController.swift in Sources */,
+				B6E017C21FE8ECAC003B8A3F /* ChangePasswordViewController.swift in Sources */,
 				B6AE36131F713C8B0077C308 /* ActivityIndicator.swift in Sources */,
 				B603D4CA1FBD9C87007A2C7A /* HelpDeskNewComplaintViewController.swift in Sources */,
 				B67E13FC1F8B814300A83BAB /* HelpdeskChatTableViewCell.swift in Sources */,
 				B6AE361D1F725EEB0077C308 /* HelpDeskController_V2.swift in Sources */,
 				B67E13F81F8B685700A83BAB /* ModelComplaintsData.swift in Sources */,
+				B65FF97B1FFD0E9800026BD3 /* UpdateStatusViewController.swift in Sources */,
 				B6AE36161F713CD60077C308 /* GeneralMethodClass.swift in Sources */,
 				B6AE36191F72593E0077C308 /* LeftMenuController.swift in Sources */,
 				B6DC2D8B1FB2E8A200B3D3D9 /* NotificationController.swift in Sources */,

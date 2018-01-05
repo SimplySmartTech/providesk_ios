@@ -134,7 +134,13 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
         //        BtnAddMoreAssets.setTitleColor(UIColor.red, for: UIControlState())
         //        BtnAddMoreAssets.layer.borderColor = UIColor.red.cgColor
         //        BtnAddMoreAssets.layer.borderWidth = 1.0
+        if UserDefaults.standard.string(forKey: "ResidentORUser") == "resident"{
         BtnSaveAssets.isHidden = true
+        }
+        else{
+        BtnSaveAssets.isHidden = false
+        }
+        
         
         //        clouder?.config().setValue("mixtape", forKey: "cloud_name")
         
@@ -206,7 +212,7 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
     func setText()
     {
         //        headerLbl.text = "Complaint detail".localized();
-        BtnSaveAssets.setTitle("Save Photos".localized(), for: UIControlState.normal)
+//        BtnSaveAssets.setTitle("Save Photos".localized(), for: UIControlState.normal)
         
     }
     
@@ -1046,7 +1052,7 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
     func DrawChatPost(_ PostArr: Array<JSON>, index: Int, PostCell: HelpdeskChatTableViewCell) -> HelpdeskChatTableViewCell {
         
         var xxx:CGFloat!
-        xxx = self.DecideHeightOfPost(self.ResponceArray, index:index) as CGFloat
+        xxx = self.DecideHeightOfPost(self.ResponceArray, index:index)  as CGFloat
         let str = self.ResponceArray[index]["resource_type"].string
         
         let profilePhotoUrl = self.ResponceArray[index]["resource"]["profile_photo_url"].string
@@ -1078,7 +1084,8 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
         
         
         
-        if(str=="Resident")// || str=="Resident")
+       //RIGHT
+        if(str?.caseInsensitiveCompare(GeneralMethodClass.GET_RESPONSE_KEY())==ComparisonResult.orderedSame)// || str=="Resident")orderedSame
         {
             PostCell.userMsgView.backgroundColor = UIColor(red: 180/255.0, green: 221/255.0, blue: 174/255.0, alpha: 1)
             
@@ -1086,11 +1093,11 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
             
             //            PostCell.userMsgView.backgroundColor = UIColor(red: 115, green: 202, blue: 113, alpha: 1.0)
             
-            PostCell.usernameLbl.frame = CGRect(x: 6, y: 6, width: 60, height: 10)
+            PostCell.usernameLbl.frame = CGRect(x: 6, y: 6, width: 60, height: 14)
             PostCell.usernameLbl.text = "You"
             
             PostCell.userMsgView.frame = CGRect(x:100, y:0, width:userViewWidth , height:xxx)
-            PostCell.userMsgLbl.frame = CGRect(x:10, y:maxLblY , width:contentWidth, height:xxx-21)
+            PostCell.userMsgLbl.frame = CGRect(x:10, y:maxLblY + 4 , width:contentWidth, height:xxx-21)
             PostCell.userMsgLbl.font = UIFont(name: "Arial", size: 15)
             PostCell.userMsgLbl.textAlignment = .left
             PostCell.datelbl.textAlignment = .right
@@ -1118,7 +1125,8 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
             //                PostCell.datelbl.frame = CGRect(x:5, y:xxx-21, width:280, height:21)
             //            }
         }
-        else if(str=="User")
+        //LEFT
+        else if(!(str?.caseInsensitiveCompare(GeneralMethodClass.GET_RESPONSE_KEY())==ComparisonResult.orderedSame) && !(str==nil))
         {
             PostCell.userMsgView.backgroundColor = UIColor(red: 231/255.0, green: 231/255.0, blue: 231/255.0, alpha: 1)
             
@@ -1126,10 +1134,10 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
             
             //            PostCell.userMsgView.backgroundColor = UIColor(red: 238, green: 238, blue: 238, alpha: 1.0)
             
-            PostCell.usernameLbl.frame = CGRect(x: 6, y: 6, width: 60, height: 10)
+            PostCell.usernameLbl.frame = CGRect(x: 6, y: 6, width: 60, height: 14)
             PostCell.usernameLbl.text = PostArr[index][]["resource"]["name"].stringValue
             
-            PostCell.userMsgView.frame = CGRect(x:40, y:0, width:userViewWidth, height:xxx)
+            PostCell.userMsgView.frame = CGRect(x:40, y:4, width:userViewWidth, height:xxx)
             PostCell.userMsgLbl.font = UIFont(name: "Arial", size: 15)
             PostCell.userMsgLbl.textAlignment = .left
             PostCell.datelbl.textAlignment = .right
@@ -1167,7 +1175,7 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
             //                PostCell.datelbl.frame = CGRect(x:10, y:xxx-21, width:310, height:21)
             //            }
         }
-            
+            //MIDDLE
         else if (str == nil){
             PostCell.userMsgView.backgroundColor = UIColor(red: 244/255.0, green: 245/255.0, blue: 186/255.0, alpha: 1)
             PostCell.usernameLbl.text = ""
@@ -1447,6 +1455,11 @@ class HelpDeskChatController: UIViewController, UITextFieldDelegate, UITableView
         }
     }
     
+    @IBAction func updateStatusAction(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "update_status", sender: self)
+        
+    }
     
     
     

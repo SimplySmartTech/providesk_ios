@@ -96,6 +96,14 @@ class HelpDeskController_V2: UIViewController,UITableViewDataSource,UITableViewD
     {
         super.viewDidLoad()
         
+        let userOrResident = UserDefaults.standard.string(forKey: "ResidentORUser")
+        
+        if userOrResident == "user"{
+            addBtn.isHidden = true
+        }
+        else{
+            addBtn.isHidden = true
+        }
         
         self.tableView_Pending.dataSource = self
         self.tableView_Pending.delegate = self
@@ -128,7 +136,7 @@ class HelpDeskController_V2: UIViewController,UITableViewDataSource,UITableViewD
         //        self.addLbl.frame = CGRect(x: addLbl.frame.origin.x, y: addLbl.frame.origin.y, width: (addLbl.frame.width / 2.0), height: (addLbl.frame.height/2.0))
         
         self.addBtn.layer.cornerRadius = 0.5 * addBtn.bounds.size.width
-        self.addBtn.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 156.0, blue: 106.0, alpha: 0.0)
+//        self.addBtn.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 156.0, blue: 106.0, alpha: 0.0)
         //self.addLbl.layer.cornerRadius = 0.5 * addLbl.bounds.size.width
         
         NotificationCenter.default.addObserver(self, selector: #selector(HelpDeskController_V2.setText), name: NSNotification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
@@ -817,28 +825,6 @@ class HelpDeskController_V2: UIViewController,UITableViewDataSource,UITableViewD
             chatVC.FromWhere = "OpenClosedList"
 
         }
-//        else if(segue.identifier == "HelpDeskFeedback"){
-//            let feedBackVC = segue.destination as! FeedbackController
-//
-//            feedBackVC.StringCategorySubject = subCategory
-//            feedBackVC.StringNumber = number
-//            feedBackVC.StringState = subCategoryState
-//            feedBackVC.StringComplaintID = complaintId
-//            feedBackVC.StringFlatID = FlatIDString
-//        }
-//        else if(segue.identifier == "Go2HelpDeskCategory"){
-//
-//        }
-//        else if(segue.identifier == "view_history"){
-//            let historyVC = segue.destination as! HelpDeskHistoryViewController
-//
-//            historyVC.resolvedComplaints = self.resolvedComplaints
-//        }
-//        else if(segue.identifier == "new_Complaint"){
-//            print("Calling new_complaint")
-//            let newComplaintVC = segue.destination as! HelpDeskNewComplaintViewController
-//            newComplaintVC.categoryDisctionary = self.categoryDisctionary
-//        }
     }
     
     /*

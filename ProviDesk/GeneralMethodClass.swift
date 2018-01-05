@@ -41,7 +41,7 @@ class GeneralMethodClass: NSObject {
         if GeneralMethodClass.isCurrentLoginForIndustrial() {
             keyLoginType = "sites"
         }
-        let array = Dictionary!.value(forKeyPath: String(format: "data.resident.%@",keyLoginType)) as! NSArray
+        let array = Dictionary!.value(forKeyPath: String(format: "data.%@.%@",GeneralMethodClass.GET_RESPONSE_KEY(),keyLoginType)) as! NSArray
         
         for dict in array
         {
@@ -53,6 +53,15 @@ class GeneralMethodClass: NSObject {
             }
         }
         return Flat_uuid
+    }
+    
+    class func GET_RESPONSE_KEY() ->String {
+        if (UserDefaults.standard.value(forKey: "ResidentORUser") != nil){
+            return UserDefaults.standard.value(forKey: "ResidentORUser") as! String
+        }
+        else{
+            return ""
+        }
     }
     
     //    class func Get_Current_Site_id () ->String{
@@ -88,7 +97,7 @@ class GeneralMethodClass: NSObject {
         if GeneralMethodClass.isCurrentLoginForIndustrial() {
             keyLoginType = "sites"
         }
-        let array = Dictionary!.value(forKeyPath: String(format: "data.resident.%@",keyLoginType)) as! NSArray
+        let array = Dictionary!.value(forKeyPath: String(format: "data.%@.%@",GeneralMethodClass.GET_RESPONSE_KEY(),keyLoginType)) as! NSArray
         
         for dict in array
         {
@@ -132,7 +141,7 @@ class GeneralMethodClass: NSObject {
         
         let Dictionary = GeneralMethodClass.getUserData()
         //print(Dictionary)
-        let ID = Dictionary!.value(forKeyPath: "data.resident.id") as! String
+        let ID = Dictionary!.value(forKeyPath: String(format:"data.%@.id",GeneralMethodClass.GET_RESPONSE_KEY())) as! String
         
         return ID
     }
@@ -141,7 +150,7 @@ class GeneralMethodClass: NSObject {
         
         let Dictionary = GeneralMethodClass.getUserData()
         //print(Dictionary)
-        let userName = Dictionary!.value(forKeyPath: "data.resident.name") as! String
+        let userName = Dictionary!.value(forKeyPath: String(format:"data.%@.name",GeneralMethodClass.GET_RESPONSE_KEY())) as! String
         print("Logged in User Is : \(userName)")
         
         return userName
@@ -151,8 +160,8 @@ class GeneralMethodClass: NSObject {
         
         let Dictionary = GeneralMethodClass.getUserData()
         //print(Dictionary)
-        if Dictionary!.value(forKeyPath: "data.resident.company.name") as? String != nil{
-        let companyName = Dictionary!.value(forKeyPath: "data.resident.company.name") as! String
+        if Dictionary!.value(forKeyPath: String(format:"data.%@.company.name",GeneralMethodClass.GET_RESPONSE_KEY())) as? String != nil{
+            let companyName = Dictionary!.value(forKeyPath: String(format:"data.%@.company.name",GeneralMethodClass.GET_RESPONSE_KEY())) as! String
         
         return companyName
         }
